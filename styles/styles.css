@@ -483,4 +483,31 @@ video {
             box-shadow: 0 2.5em 0 0;
   }
 }
+
+@media only screen and (max-width: 1366px) {
+  .navbar li {
+    font-size: 16px !important;
+    margin-right: 12px;
+  }
+  video {
+    width: 135% !important;
+  }
+  img {
+    width: 200px !important;
+  }
+  h1 {
+    font-size: 48px !important;
+  }
+  p {
+    font-size: 16px !important;
+    margin-bottom: 12px;
+  }
+  button {
+    font-size: 16px;
+    padding: 6px 12px 6px 12px;
+  }
+  .layer-left-active {
+    margin-bottom: 240px !important;
+  }
+}
 /*# sourceMappingURL=styles.css.map */
