@@ -73,8 +73,9 @@ button {
 }
 
 video {
-    width: 100%;
+    width: 120%;
     height: 100%;
+    background-attachment: fixed;
     background-position: center;
     background-size: contain;
     object-fit: cover;
@@ -85,15 +86,18 @@ video {
     position: absolute;
     margin: auto;
     z-index: 5;
-    animation: swoop 1s ease-in-out;
-    bottom: 66px;
-    margin-left: 66px;
+    animation: swoop 1s ease-out;
+    bottom: 0px;
+    padding-left: 66px;
+    padding-bottom: 66px;
     width: 100%;
+    background: linear-gradient(transparent, black);
 
     h1 {
         font-size: 64px;
         margin-bottom: 0px;
-        font-weight: normal;
+        //opacity: 0.7;
+        //font-weight: normal;
     }
 
     .genre {
@@ -106,10 +110,11 @@ video {
     .summary {
        font-size: 24px; 
        max-width: 720px;
+       //opacity: 0.7;
     }
 
     .watch {
-        margin: 6px 0px;
+        margin: 6px 0px 0px 0px;
     }
 
 }
@@ -196,5 +201,118 @@ video {
 //----- contact footer -----
 
 .contact-footer {
-    background: #e0e0e0;
+    background: #bdbdbd;
+}
+
+.loader-active {
+    position: absolute;
+    z-index: 8;
+    top: 0px;
+    color: black;
+    background: black;
+    width: 100%;
+    margin: 0px;
+    height: 100vh;
+    padding: 0px;
+
+    pointer-events: none;
+}
+
+.loader-inactive {
+    position: absolute;
+    //z-index: 7;
+    animation: veil 1.5s ease-in-out;
+
+}
+
+
+@keyframes veil {
+    from {
+        position: absolute;
+        z-index: 8;
+        //top: 0px;
+        background: black;
+        width: 100%;
+        margin: 0px;
+        height: 100vh;
+
+    }
+    to {
+        background: black;
+        z-index: 8;
+        width: 100%;
+        height: 0vh;
+        //opacity: 0;
+
+        .loader {
+            opacity: 0;
+        }
+
+    }
+}
+
+//----- loader spin -----
+
+.loader,
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: load7 1.7s infinite ease-in-out;
+  animation: load7 1.7s infinite ease-in-out;
+  animation-iteration-count: 3;
+}
+.loader {
+  color: #ffffff;
+  font-size: 10px;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-indent: -9999em;
+  transition: 200ms;
+  //-webkit-transform: translateZ(0);
+  //-ms-transform: translateZ(0);
+  //transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+.loader:before {
+  left: -3.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 3.5em;
+}
+@-webkit-keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+@keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
 }

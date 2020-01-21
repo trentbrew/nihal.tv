@@ -24,12 +24,17 @@ new Vue({
     },
     data(){
         return {
+            displayLoader: true,
             currentTab: 0,
             options: {
                 afterLoad: this.handleLoad,
                 navigation: true,
                 navigationPosition: 'right',
-                parallax: true
+                parallax: true,
+                lazyLoading: false,
+                onLeave: function(origin, destination, direction) {
+                    console.log('going ' + direction);
+                }
             },
             item: {
                 title: "",
@@ -57,7 +62,8 @@ new Vue({
         setTimeout(function() {
             console.log("item count: " + parentObj.items.length);
             parentObj.componentsReady();
-        }, 1500)
+            parentObj.removeLoader();
+        }, 5000)
     },
     methods: {
         tabClick(tab) {
@@ -214,6 +220,10 @@ new Vue({
         },
         handleLoad() {
             console.log("Emitted 'after load' event");
+        },
+        removeLoader() {
+            console.log("goodbye loader");
+            this.displayLoader = false;
         }
     }
 })

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html style="overflow: hidden">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <title>Nihal.tv Site Editor</title>
+        <title>Nihal.tv</title>
         <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
 
         <link rel="stylesheet" href="styles/styles.css">
@@ -26,17 +26,30 @@
         <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-storage.js"></script>
     </head>
     <body>
+        
         <div class = "container" id="app">
 
+
+            <div v-bind:class="[displayLoader ? 'loader-active' : 'loader-inactive']">
+                    <div class="loader">Loading...</div>
+            </div>
+
+            <div v-bind:class="[displayLoader ? 'veil-active' : 'veil-inactive']">
+                    <div class="loader">Loading...</div>
+            </div>
+
             <div class="navbar">
+
+                    
                 <div class="nav-text">
                     <ul>
                         <li @click="{ tabClick(0); $refs.fullpage.api.moveTo(1) }" v-bind:class="[currentTab == 0 ? 'active' : '']">Film</li>
                         <li @click="{ tabClick(1) }" v-bind:class="[currentTab == 1 ? 'active' : '']">Photo</li>
-                        <li @click="{ tabClick(2); $refs.fullpage.api.moveTo(items.length + 1) }" v-bind:class="[currentTab == 2 ? 'active' : '']" class="contact-link">Contact</li>
+                        <li @click="{ tabClick(2); $refs.fullpage.api.moveTo(items.length + 2) }" v-bind:class="[currentTab == 2 ? 'active' : '']" class="contact-link">Contact</li>
                     </ul>
                 </div>
             </div>
+            
 
             <div>
                 <full-page ref="fullpage" :options="options" id="fullpage" :skip-init="true">
@@ -57,7 +70,7 @@
                         <video loop data-autoplay muted>
                             <source :src="i.finalFilm + '#t=85'" type="video/mp4" />
                         </video>
-                        <div class="layer">
+                        <div class="layer" v-bind:class="">
                             <h1>{{i.title}}</h1>
                             <p class="genre">{{i.genre}}</p>
                             <p class="summary">{{i.summary}}</p>
