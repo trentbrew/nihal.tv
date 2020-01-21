@@ -181,4 +181,22 @@ video {
 .navbar .nav-text ul li:hover {
   opacity: 0.3;
 }
+
+.navbar .nav-text .active {
+  font-weight: bold;
+  border-bottom: 3px solid white;
+}
+
+.navbar .nav-text .active:hover {
+  opacity: 1;
+}
+
+.navbar .nav-text .inactive {
+  font-weight: normal;
+  border-bottom: none;
+}
+
+.contact-footer {
+  background: #e0e0e0;
+}
 /*# sourceMappingURL=styles.css.map */

@@ -23,8 +23,8 @@ new Vue({
         }
     },
     data(){
-        var creditNum = 1
         return {
+            currentTab: 0,
             options: {
                 afterLoad: this.handleLoad,
                 navigation: true,
@@ -60,6 +60,9 @@ new Vue({
         }, 1500)
     },
     methods: {
+        tabClick(tab) {
+            this.currentTab = tab
+        },
         componentsReady() {
             this.$refs.fullpage.init()
             this.$refs.fullpage.build()

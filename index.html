@@ -31,15 +31,16 @@
             <div class="navbar">
                 <div class="nav-text">
                     <ul>
-                        <li>Film</li>
-                        <li>Photo</li>
-                        <li class="contact-link" @click="$refs.fullpage.api.moveTo(items.length + 1)">Contact</li>
+                        <li @click="{ tabClick(0); $refs.fullpage.api.moveTo(1) }" v-bind:class="[currentTab == 0 ? 'active' : '']">Film</li>
+                        <li @click="{ tabClick(1) }" v-bind:class="[currentTab == 1 ? 'active' : '']">Photo</li>
+                        <li @click="{ tabClick(2); $refs.fullpage.api.moveTo(items.length + 1) }" v-bind:class="[currentTab == 2 ? 'active' : '']" class="contact-link">Contact</li>
                     </ul>
                 </div>
             </div>
 
             <div>
                 <full-page ref="fullpage" :options="options" id="fullpage" :skip-init="true">
+                    <!-- static hero section -->
                     <div class="section hero-section">
                         <video loop data-autoplay muted>
                             <source :src="items[2].finalFilm + '#t=85'" type="video/mp4" />
@@ -51,6 +52,7 @@
                             <button class="next" @click="$refs.fullpage.api.moveSectionDown()">View Reel</button>
                         </div>
                     </div>
+                    <!-- dynamic project sections -->
                     <div class="section" v-for="(i, index) in items">
                         <video loop data-autoplay muted>
                             <source :src="i.finalFilm + '#t=85'" type="video/mp4" />
@@ -61,6 +63,10 @@
                             <p class="summary">{{i.summary}}</p>
                             <button class="watch" @click="$refs.fullpage.api.moveSectionDown()">Watch film</button>
                         </div>
+                    </div>
+                    <!-- static contact footer -->
+                    <div class="section contact-footer">
+                        
                     </div>
                 </full-page>
             </div>

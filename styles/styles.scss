@@ -175,5 +175,26 @@ video {
                 }
             }
         }
+
+        .active {
+            //background: red;
+            font-weight: bold;
+            border-bottom: 3px solid white;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .inactive {
+            font-weight: normal;
+            border-bottom: none;
+        }
     }
+}
+
+//----- contact footer -----
+
+.contact-footer {
+    background: #e0e0e0;
 }
