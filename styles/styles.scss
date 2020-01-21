@@ -1,0 +1,145 @@
+$colorText: #555;
+$colorMain: #212225;
+$colorDark: #131417;
+$colorLight: rgba(white, 0.3);
+$colorLink: #ff7065;
+$colorWhite: #eee;
+$colorGreen: #66BB6A;
+$colorYellow: #FBC02D;
+
+body {
+    margin: 0px;
+    //font-family: 'Roboto Condensed', sans-serif;
+    //font-family: 'Nunito', sans-serif;
+    //font-family: 'Hind Siliguri', sans-serif;
+    font-family: 'Yantramanav', sans-serif;
+    background: $colorMain;
+    color: white;
+
+    p {
+        font-size: 16px;
+    }
+
+    .credit {
+        font-size: 14px;
+    }
+}
+
+.container {
+    width: 100%;
+    
+    ul {
+        list-style: none;
+        padding: 0px;
+    }
+}
+
+.hero-section {
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100vh;
+    
+    h1 {
+        text-align: center;
+        margin: 0px;
+    }
+
+    p {
+        text-align: center;
+        font-size: 24px;
+        //margin-top: 0px;
+    }
+}
+
+button {
+    padding: 12px 24px 12px 24px;
+    color: white;
+    border: 2px solid white;
+    background: rgba(0,0,0,0);
+    margin: 18px 12px 18px 12px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 200ms;
+
+    &:hover {
+        background: white;
+        color: black;
+    }
+}
+
+.hero-header {
+    font-size: 72px;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    object-fit: cover;
+    transition: 400ms;
+}
+
+.layer {
+    position: absolute;
+    margin: auto;
+    z-index: 5;
+    animation: swoop 1s ease-in-out;
+    bottom: 66px;
+    margin-left: 66px;
+    width: 100%;
+
+    h1 {
+        font-size: 64px;
+        margin-bottom: 0px;
+        font-weight: normal;
+    }
+
+    .genre {
+        font-size: 24px;
+        margin-top: 6px;
+        //font-weight: bold;
+        opacity: 0.4;
+    }
+
+    .summary {
+       font-size: 24px; 
+       max-width: 720px;
+    }
+
+    .watch {
+        margin: 6px 0px;
+    }
+
+}
+
+.layer-main {
+    animation: swoop 1s ease-in-out;
+    position: absolute;
+    z-index: 5;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 35%;
+    bottom: 0;
+    text-align: center;
+
+    h1 {
+        font-weight: normal;
+    }
+
+    p {
+        margin-top: 12px;
+        //opacity: 0.6;
+    }
+}
+
+@keyframes swoop {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

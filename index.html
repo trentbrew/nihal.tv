@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Nihal.tv Site Editor</title>
+        <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
+
+        <link rel="stylesheet" href="styles/styles.css">
+
+        <!--fullpage-->
+        <link rel="stylesheet" href="fullpage/fullpage.css">
+        
+        <!--fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri|Nunito|Roboto+Condensed|Yantramanav&display=swap" rel="stylesheet">
+
+        <!-- Vue -->   
+        <script src="https://unpkg.com/vue"></script>
+        <!-- firebase -->
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
+        <!-- firestore -->
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-firestore.js"></script>
+        <!-- vue-firestore -->   
+        <script src="https://unpkg.com/vue-firestore"></script>
+        <!-- storage -->
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-storage.js"></script>
+    </head>
+    <body>
+        <div class = "container" id="app">
+
+            <div>
+                <full-page ref="fullpage" :options="options" id="fullpage" :skip-init="true">
+                    <div class="section hero-section">
+                        <video loop data-autoplay muted>
+                            <source :src="items[2].finalFilm + '#t=85'" type="video/mp4" />
+                        </video>
+                        <div class="layer-main">
+                            <h1 class="hero-header">NIHAL DANTLURI</h1>
+                            <p>Director of Photography</p>
+                            <button class="next" @click="$refs.fullpage.api.moveSectionDown()">View Work</button>
+                            <button class="next" @click="$refs.fullpage.api.moveSectionDown()">View Reel</button>
+                        </div>
+                    </div>
+                    <div class="section" v-for="(i, index) in items">
+                        <video loop data-autoplay muted>
+                            <source :src="i.finalFilm + '#t=85'" type="video/mp4" />
+                        </video>
+                        <div class="layer">
+                            <h1>{{i.title}}</h1>
+                            <p class="genre">{{i.genre}}</p>
+                            <p class="summary">{{i.summary}}</p>
+                            <button class="watch" @click="$refs.fullpage.api.moveSectionDown()">Watch film</button>
+                        </div>
+                    </div>
+                </full-page>
+            </div>
+
+            <!--div class="section-right">
+
+                <ul class="list-group">
+                    <li class="list-group-item project-item" v-for="(i, index) in items">
+                        <div class="vid-section">
+                            <video controls autoplay muted width="600">
+                                <source :src="i.finalFilm" type="video/mp4" />
+                            </video>
+                            <div class="vid-text">
+                                <h1>{{i.title}}</h1>
+                                <strong><p style="opacity:0.5">{{i.genre}}</p></strong>
+                                <p style="width:512px">{{i.summary}}</p>
+                            </div>
+                        </div>
+                        <br>
+                        <ul style="display: inline-flex; list-style: none; padding: 0px" class="images">
+                            <li v-for="(p, index) in i.screenGrabs">
+                                <img style="width: 240px" :src="p" />
+                            </li>
+                        </ul>
+                        <br>
+                        <p class="credit" style="display: inline-flex" v-for="(c, index) in i.credits"><span>{{c.role}}</span>&nbsp;<strong>{{c.name}}</strong>&nbsp;</p>
+                    </li>
+                </ul>
+            </div-->
+        
+        </div>
+
+
+        <!-- fullpage-->
+        <script src="fullpage/fullpage.js"></script>
+        <!-- app -->
+        <script src="app.js"></script>
+    </body>
+</html>
