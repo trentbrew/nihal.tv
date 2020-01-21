@@ -150,8 +150,12 @@ video {
     transition: 500ms;
     pointer-events: none;
 
+    /*ul:nth-child(0) {
+        background: red;
+    }*/
+
     .images {
-        margin-left: -24px;
+        //margin-left: -24px;
     }
 
     img {
@@ -165,6 +169,10 @@ video {
             opacity: 0.4;
         }
     }
+}
+
+#shot0 {
+    display: none;
 }
 
 .more-info-active {

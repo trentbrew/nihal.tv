@@ -82,7 +82,7 @@
                         <div class="more-info" v-bind:class="[infoActive ? 'more-info-active' : 'more-info-inactive' ]">
                             <ul style="display: inline-flex; list-style: none; padding: 0px" class="images">
                                 <li v-for="(p, index) in i.screenGrabs">
-                                    <img style="width: 256px" :src="p" />
+                                    <img style="width: 256px" :src="p" :id="'shot' + index" />
                                 </li>
                             </ul>
                             <br>
