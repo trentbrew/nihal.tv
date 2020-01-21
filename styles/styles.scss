@@ -143,3 +143,37 @@ video {
         opacity: 1;
     }
 }
+
+.navbar {
+    position: fixed;
+    z-index: 6;
+    top: 0px;
+    color: black;
+    //background: white;
+    width: 100%;
+    margin: 0px;
+    height: 60px;
+    padding: 36px 0px 0px 60px;
+
+    .nav-text {
+        ul {
+            display: inline-flex;
+            padding: 0px;
+            margin: 0px;
+
+            li {
+                margin: 0px 36px 0px 0px;
+                padding: 0px;
+                line-height: 60px;
+                color: white;
+                font-size: 18px;
+                cursor: pointer;
+                transition: 200ms;
+
+                &:hover {
+                    opacity: 0.3;
+                }
+            }
+        }
+    }
+}

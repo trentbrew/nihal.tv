@@ -147,4 +147,38 @@ video {
     opacity: 1;
   }
 }
+
+.navbar {
+  position: fixed;
+  z-index: 6;
+  top: 0px;
+  color: black;
+  width: 100%;
+  margin: 0px;
+  height: 60px;
+  padding: 36px 0px 0px 60px;
+}
+
+.navbar .nav-text ul {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0px;
+  margin: 0px;
+}
+
+.navbar .nav-text ul li {
+  margin: 0px 36px 0px 0px;
+  padding: 0px;
+  line-height: 60px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.navbar .nav-text ul li:hover {
+  opacity: 0.3;
+}
 /*# sourceMappingURL=styles.css.map */

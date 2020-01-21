@@ -28,6 +28,16 @@
     <body>
         <div class = "container" id="app">
 
+            <div class="navbar">
+                <div class="nav-text">
+                    <ul>
+                        <li>Film</li>
+                        <li>Photo</li>
+                        <li class="contact-link" @click="$refs.fullpage.api.moveTo(items.length + 1)">Contact</li>
+                    </ul>
+                </div>
+            </div>
+
             <div>
                 <full-page ref="fullpage" :options="options" id="fullpage" :skip-init="true">
                     <div class="section hero-section">

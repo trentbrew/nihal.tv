@@ -121,7 +121,8 @@
  }
  
  #fp-nav.fp-right {
-     right: 48px
+     right: 48px;
+     transform: scale(1.2);
  }
  
  #fp-nav.fp-left {
