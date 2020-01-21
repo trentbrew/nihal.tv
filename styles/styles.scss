@@ -54,13 +54,14 @@ body {
 
 button {
     padding: 12px 24px 12px 24px;
-    color: white;
     border: 2px solid white;
-    background: rgba(0,0,0,0);
     margin: 18px 12px 18px 12px;
     font-size: 24px;
     cursor: pointer;
     transition: 200ms;
+    display: inline-flex;
+    background: rgba(0,0,0,0);
+    color: white;
 
     &:hover {
         background: white;
@@ -82,16 +83,44 @@ video {
     transition: 400ms;
 }
 
+.more-info {
+    background: red;
+    position: absolute;
+    margin: auto;
+    z-index:5;
+    bottom:0px;
+    padding: 66px;
+    width: calc(100% - 132px);
+    transition: 500ms;
+
+    img {
+        margin-right: 24px;
+    }
+
+    .credit {
+        font-size: 18px;
+
+        span {
+            opacity: 0.4;
+        }
+    }
+}
+
 .layer {
     position: absolute;
     margin: auto;
     z-index: 5;
     animation: swoop 1s ease-out;
     bottom: 0px;
-    padding-left: 66px;
-    padding-bottom: 66px;
-    width: 100%;
+    padding: 66px;
+    width: calc(100% - 132px);
     background: linear-gradient(transparent, black);
+    transition: 500ms;
+
+    .layer-left {
+        transition: 500ms;
+        margin-bottom: -52px;
+    }
 
     h1 {
         font-size: 64px;
@@ -112,11 +141,87 @@ video {
        max-width: 720px;
        //opacity: 0.7;
     }
+}
 
-    .watch {
-        margin: 6px 0px 0px 0px;
+.watch {
+    margin: 6px 12px 0px 0px;
+    //background: white;
+    //color: black;
+
+    &:hover {
+       //opacity: 0.5;
+    }
+}
+
+.more-info {
+    pointer-events: none;
+}
+
+.more-info-active {
+    opacity: 1;
+}
+
+.more-info-inactive {
+    opacity: 0;
+}
+
+.info {
+    border: none;
+    float: right;
+    display: inline-flex;
+    background: rgba(0,0,0,0);
+    color: white;
+    margin: 0px;
+
+    &:hover {
+        opacity: 0.3;
+        background: none;
+        color: white;
     }
 
+    .arrow {
+        //background: red;
+        background-image: url("../res/arrow-down.svg");
+        background-size: contain;
+        background-position: 0px 4px;
+        transform: rotate(180deg);
+        filter: invert(1);
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 24px;
+        margin-left: 8px;
+        transition: 200ms;
+    }
+}
+
+.next {
+    //background: red;
+    display: inline-flex;
+    background: rgba(0,0,0,0);
+    color: white;
+
+    .arrow {
+        //background: red;
+        background-image: url("../res/arrow-down.svg");
+        background-size: contain;
+        background-position: 0px 4px;
+        transform: rotate(180deg);
+        filter: invert(1);
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 24px;
+        margin-left: 8px;
+        transition: 200ms;
+    }
+
+    &:hover {
+        background: white;
+        color: black;
+
+        .arrow {
+            filter: invert(0);
+        }
+    }
 }
 
 .layer-main {

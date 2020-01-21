@@ -47,14 +47,17 @@ body .credit {
 
 button {
   padding: 12px 24px 12px 24px;
-  color: white;
   border: 2px solid white;
-  background: rgba(0, 0, 0, 0);
   margin: 18px 12px 18px 12px;
   font-size: 24px;
   cursor: pointer;
   -webkit-transition: 200ms;
   transition: 200ms;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background: rgba(0, 0, 0, 0);
+  color: white;
 }
 
 button:hover {
@@ -78,6 +81,30 @@ video {
   transition: 400ms;
 }
 
+.more-info {
+  background: red;
+  position: absolute;
+  margin: auto;
+  z-index: 5;
+  bottom: 0px;
+  padding: 66px;
+  width: calc(100% - 132px);
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.more-info img {
+  margin-right: 24px;
+}
+
+.more-info .credit {
+  font-size: 18px;
+}
+
+.more-info .credit span {
+  opacity: 0.4;
+}
+
 .layer {
   position: absolute;
   margin: auto;
@@ -85,11 +112,18 @@ video {
   -webkit-animation: swoop 1s ease-out;
           animation: swoop 1s ease-out;
   bottom: 0px;
-  padding-left: 66px;
-  padding-bottom: 66px;
-  width: 100%;
+  padding: 66px;
+  width: calc(100% - 132px);
   background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black));
   background: linear-gradient(transparent, black);
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.layer .layer-left {
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  margin-bottom: -52px;
 }
 
 .layer h1 {
@@ -108,8 +142,87 @@ video {
   max-width: 720px;
 }
 
-.layer .watch {
-  margin: 6px 0px 0px 0px;
+.watch {
+  margin: 6px 12px 0px 0px;
+}
+
+.more-info {
+  pointer-events: none;
+}
+
+.more-info-active {
+  opacity: 1;
+}
+
+.more-info-inactive {
+  opacity: 0;
+}
+
+.info {
+  border: none;
+  float: right;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  margin: 0px;
+}
+
+.info:hover {
+  opacity: 0.3;
+  background: none;
+  color: white;
+}
+
+.info .arrow {
+  background-image: url("../res/arrow-down.svg");
+  background-size: contain;
+  background-position: 0px 4px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.next {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+}
+
+.next .arrow {
+  background-image: url("../res/arrow-down.svg");
+  background-size: contain;
+  background-position: 0px 4px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.next:hover {
+  background: white;
+  color: black;
+}
+
+.next:hover .arrow {
+  -webkit-filter: invert(0);
+          filter: invert(0);
 }
 
 .layer-main {

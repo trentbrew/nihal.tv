@@ -24,17 +24,17 @@ new Vue({
     },
     data(){
         return {
+            infoActive: false,
             displayLoader: true,
             currentTab: 0,
             options: {
+                //parent: this,
                 afterLoad: this.handleLoad,
+                onLeave: this.handleLeave,
                 navigation: true,
                 navigationPosition: 'right',
                 parallax: true,
                 lazyLoading: false,
-                onLeave: function(origin, destination, direction) {
-                    console.log('going ' + direction);
-                }
             },
             item: {
                 title: "",
@@ -224,6 +224,19 @@ new Vue({
         removeLoader() {
             console.log("goodbye loader");
             this.displayLoader = false;
+        },
+        handleLeave() {
+            console.log('left');
+            this.infoActive = false;
+        },
+        toggleInfo() {
+            if(this.infoActive) {
+                this.infoActive = false
+            }
+            else {
+                this.infoActive = true
+            }
+            console.log("info active: " + this.infoActive);
         }
     }
 })

@@ -61,8 +61,8 @@
                         <div class="layer-main">
                             <h1 class="hero-header">NIHAL DANTLURI</h1>
                             <p>Director of Photography</p>
-                            <button class="next" @click="$refs.fullpage.api.moveSectionDown()">View Work</button>
-                            <button class="next" @click="$refs.fullpage.api.moveSectionDown()">View Reel</button>
+                            <button class="watch" @click="$refs.fullpage.api.moveSectionDown()">View Reel</button>
+                            <button class="next" @click="$refs.fullpage.api.moveSectionDown()">View Work<!--div class="arrow"></div--></button>
                         </div>
                     </div>
                     <!-- dynamic project sections -->
@@ -71,10 +71,24 @@
                             <source :src="i.finalFilm + '#t=85'" type="video/mp4" />
                         </video>
                         <div class="layer" v-bind:class="">
-                            <h1>{{i.title}}</h1>
-                            <p class="genre">{{i.genre}}</p>
-                            <p class="summary">{{i.summary}}</p>
-                            <button class="watch" @click="$refs.fullpage.api.moveSectionDown()">Watch film</button>
+                            <div class="layer-left">
+                                <h1>{{i.title}}</h1>
+                                <p class="genre">{{i.genre}}</p>
+                                <p class="summary">{{i.summary}}</p>
+                                <button class="watch" @click="$refs.fullpage.api.moveSectionDown()">Watch film</button>
+                            </div>
+                            <button class="info" @click="toggleInfo()">More info<div class="arrow"></div></button>
+                        </div>
+                        <div class="more-info" v-bind:class="[infoActive ? 'more-info-active' : 'more-info-inactive' ]">
+                            <ul style="display: inline-flex; list-style: none; padding: 0px" class="images">
+                                <li v-for="(p, index) in i.screenGrabs">
+                                    <img style="width: 256px" :src="p" />
+                                </li>
+                            </ul>
+                            <br>
+                            <div class="credits">
+                                <p class="credit" style="display: inline-flex" v-for="(c, index) in i.credits"><span>{{c.role}}</span>&nbsp;<strong>{{c.name}}</strong>&nbsp;</p>
+                            </div>
                         </div>
                     </div>
                     <!-- static contact footer -->
