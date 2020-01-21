@@ -81,30 +81,6 @@ video {
   transition: 400ms;
 }
 
-.more-info {
-  background: red;
-  position: absolute;
-  margin: auto;
-  z-index: 5;
-  bottom: 0px;
-  padding: 66px;
-  width: calc(100% - 132px);
-  -webkit-transition: 500ms;
-  transition: 500ms;
-}
-
-.more-info img {
-  margin-right: 24px;
-}
-
-.more-info .credit {
-  font-size: 18px;
-}
-
-.more-info .credit span {
-  opacity: 0.4;
-}
-
 .layer {
   position: absolute;
   margin: auto;
@@ -124,6 +100,12 @@ video {
   -webkit-transition: 500ms;
   transition: 500ms;
   margin-bottom: -52px;
+}
+
+.layer .layer-left-active {
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  margin-bottom: 300px;
 }
 
 .layer h1 {
@@ -146,16 +128,47 @@ video {
   margin: 6px 12px 0px 0px;
 }
 
+.blur {
+  -webkit-filter: blur(35px);
+          filter: blur(35px);
+}
+
 .more-info {
+  position: absolute;
+  margin: auto;
+  z-index: 5;
+  bottom: 0px;
+  padding: 66px;
+  max-width: 1000px;
+  -webkit-transition: 500ms;
+  transition: 500ms;
   pointer-events: none;
+}
+
+.more-info .images {
+  margin-left: -24px;
+}
+
+.more-info img {
+  margin-right: 24px;
+}
+
+.more-info .credit {
+  font-size: 18px;
+}
+
+.more-info .credit span {
+  opacity: 0.4;
 }
 
 .more-info-active {
   opacity: 1;
+  bottom: 0px;
 }
 
 .more-info-inactive {
   opacity: 0;
+  bottom: -360px;
 }
 
 .info {
@@ -187,8 +200,24 @@ video {
   width: 24px;
   height: 24px;
   margin-left: 8px;
-  -webkit-transition: 200ms;
-  transition: 200ms;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.info .arrow-down {
+  background-image: url("../res/arrow-down.svg");
+  background-size: contain;
+  background-position: 0px 8px;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 
 .next {
@@ -317,6 +346,8 @@ video {
 }
 
 .loader-active {
+  -webkit-filter: invert(1);
+          filter: invert(1);
   position: absolute;
   z-index: 8;
   top: 0px;
@@ -330,6 +361,8 @@ video {
 }
 
 .loader-inactive {
+  -webkit-filter: invert(1);
+          filter: invert(1);
   position: absolute;
   -webkit-animation: veil 1.5s ease-in-out;
           animation: veil 1.5s ease-in-out;

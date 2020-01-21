@@ -83,29 +83,6 @@ video {
     transition: 400ms;
 }
 
-.more-info {
-    background: red;
-    position: absolute;
-    margin: auto;
-    z-index:5;
-    bottom:0px;
-    padding: 66px;
-    width: calc(100% - 132px);
-    transition: 500ms;
-
-    img {
-        margin-right: 24px;
-    }
-
-    .credit {
-        font-size: 18px;
-
-        span {
-            opacity: 0.4;
-        }
-    }
-}
-
 .layer {
     position: absolute;
     margin: auto;
@@ -120,6 +97,11 @@ video {
     .layer-left {
         transition: 500ms;
         margin-bottom: -52px;
+    }
+
+    .layer-left-active {
+        transition: 500ms;
+        margin-bottom: 300px;
     }
 
     h1 {
@@ -153,16 +135,53 @@ video {
     }
 }
 
+.blur {
+    filter: blur(35px);
+}
+
 .more-info {
+    //background: red;
+    position: absolute;
+    margin: auto;
+    z-index:5;
+    bottom:0px;
+    padding: 66px;
+    max-width: 1000px;
+    transition: 500ms;
     pointer-events: none;
+
+    .images {
+        margin-left: -24px;
+    }
+
+    img {
+        margin-right: 24px;
+    }
+
+    .credit {
+        font-size: 18px;
+
+        span {
+            opacity: 0.4;
+        }
+    }
 }
 
 .more-info-active {
     opacity: 1;
+    bottom: 0px;
+
+    .credits {
+        //background: red;
+    }
 }
 
 .more-info-inactive {
     opacity: 0;
+    bottom: -360px;
+    .credits {
+        //background: blue;
+    }
 }
 
 .info {
@@ -190,7 +209,21 @@ video {
         width: 24px;
         height: 24px;
         margin-left: 8px;
-        transition: 200ms;
+        transition: 500ms;
+    }
+
+    .arrow-down {
+        //background: red;
+        background-image: url("../res/arrow-down.svg");
+        background-size: contain;
+        background-position: 0px 8px;
+        transform: rotate(0deg);
+        filter: invert(1);
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 24px;
+        margin-left: 8px;
+        transition: 500ms;
     }
 }
 
@@ -310,6 +343,7 @@ video {
 }
 
 .loader-active {
+    filter: invert(1);
     position: absolute;
     z-index: 8;
     top: 0px;
@@ -324,6 +358,7 @@ video {
 }
 
 .loader-inactive {
+    filter: invert(1);
     position: absolute;
     //z-index: 7;
     animation: veil 1.5s ease-in-out;

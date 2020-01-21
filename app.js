@@ -25,6 +25,7 @@ new Vue({
     data(){
         return {
             infoActive: false,
+            infoAmount: 'More info',
             displayLoader: true,
             currentTab: 0,
             options: {
@@ -232,11 +233,13 @@ new Vue({
         toggleInfo() {
             if(this.infoActive) {
                 this.infoActive = false
+                this.infoAmount = 'More info'
             }
             else {
                 this.infoActive = true
+                this.infoAmount = 'Less info'
             }
             console.log("info active: " + this.infoActive);
-        }
+        },
     }
 })
