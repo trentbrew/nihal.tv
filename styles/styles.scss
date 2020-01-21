@@ -39,6 +39,7 @@ body {
     align-items: center !important;
     justify-content: center !important;
     height: 100vh;
+    //filter: contrast(0.7);
     
     h1 {
         text-align: center;
@@ -475,7 +476,7 @@ video {
 
 //---------- Tablet / Notebook styles ----------
 
-@media only screen and (max-width: 1366px) {
+@media only screen and (max-width: 1370px) {
 
     .navbar {
         li {
