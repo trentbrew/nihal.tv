@@ -343,7 +343,7 @@ video {
     }
     to {
         opacity: 0;
-        margin-left: 100px;
+        //margin-left: 100px;
     }
 }
 
@@ -381,7 +381,7 @@ video {
 
         .active {
             //background: red;
-            font-weight: bold;
+            //font-weight: bold;
             border-bottom: 3px solid white;
 
             &:hover {
@@ -517,6 +517,10 @@ video {
   }
 }
 
+strong {
+    font-weight: normal;
+}
+
 
 
 
@@ -534,6 +538,6 @@ video {
 
     .layer-left-active {
         transition: 500ms;
-        margin-bottom: 260px;
+        margin-bottom: 260px !important;
     }
 }
