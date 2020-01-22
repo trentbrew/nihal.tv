@@ -26,6 +26,8 @@ new Vue({
         return {
             infoActive: false,
             infoAmount: 'More info',
+            enter: false,
+            exit: false,
             displayLoader: true,
             currentTab: 0,
             options: {
@@ -36,6 +38,7 @@ new Vue({
                 navigationPosition: 'right',
                 parallax: true,
                 lazyLoading: false,
+                scrollingSpeed: 1000
             },
             item: {
                 title: "",
@@ -221,6 +224,8 @@ new Vue({
         },
         handleLoad() {
             console.log("Emitted 'after load' event");
+            this.enter = true;
+            console.log('enter?: ' + this.enter);
         },
         removeLoader() {
             console.log("goodbye loader");
@@ -229,6 +234,8 @@ new Vue({
         handleLeave() {
             console.log('left');
             this.infoActive = false;
+            this.enter = false;
+            console.log('enter?: ' + this.enter);
         },
         toggleInfo() {
             if(this.infoActive) {

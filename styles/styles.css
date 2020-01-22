@@ -6,11 +6,16 @@ body {
 }
 
 body p {
-  font-size: 16px;
+  font-size: 24px;
 }
 
 body .credit {
-  font-size: 14px;
+  font-size: 24px;
+}
+
+body h1 {
+  -webkit-transition: 300ms;
+  transition: 300ms;
 }
 
 .container {
@@ -38,6 +43,7 @@ body .credit {
 .hero-section h1 {
   text-align: center;
   margin: 0px;
+  font-weight: bold;
 }
 
 .hero-section p {
@@ -49,7 +55,7 @@ button {
   padding: 12px 24px 12px 24px;
   border: 2px solid white;
   margin: 18px 12px 18px 12px;
-  font-size: 18px;
+  font-size: 22px;
   cursor: pointer;
   -webkit-transition: 200ms;
   transition: 200ms;
@@ -85,8 +91,6 @@ video {
   position: absolute;
   margin: auto;
   z-index: 5;
-  -webkit-animation: swoop 1s ease-out;
-          animation: swoop 1s ease-out;
   bottom: 0px;
   padding: 66px;
   width: calc(100% - 132px);
@@ -109,18 +113,18 @@ video {
 }
 
 .layer h1 {
-  font-size: 56px;
+  font-size: 60px;
   margin-bottom: 0px;
 }
 
 .layer .genre {
-  font-size: 18px;
+  font-size: 22px;
   margin-top: 6px;
   opacity: 0.4;
 }
 
 .layer .summary {
-  font-size: 18px;
+  font-size: 22px;
   max-width: 720px;
   margin-bottom: 22px;
 }
@@ -184,6 +188,7 @@ video {
   background: rgba(0, 0, 0, 0);
   color: white;
   margin: 0px;
+  font-size: 18px;
 }
 
 .info:hover {
@@ -195,7 +200,7 @@ video {
 .info .arrow {
   background-image: url("../res/arrow-down.svg");
   background-size: contain;
-  background-position: 0px 4px;
+  background-position: 0px 5px;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   -webkit-filter: invert(1);
@@ -211,7 +216,7 @@ video {
 .info .arrow-down {
   background-image: url("../res/arrow-down.svg");
   background-size: contain;
-  background-position: 0px 8px;
+  background-position: 0px 5px;
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
   -webkit-filter: invert(1);
@@ -259,8 +264,8 @@ video {
 }
 
 .layer-main {
-  -webkit-animation: swoop 1s ease-in-out;
-          animation: swoop 1s ease-in-out;
+  -webkit-animation: main-enter 1.3s ease-out;
+          animation: main-enter 1.3s ease-out;
   position: absolute;
   z-index: 5;
   margin: auto;
@@ -279,21 +284,81 @@ video {
   margin-top: 12px;
 }
 
-@-webkit-keyframes swoop {
+.enter {
+  opacity: 1;
+  -webkit-animation: enter 700ms ease-out;
+          animation: enter 700ms ease-out;
+}
+
+.exit {
+  -webkit-animation: exit 300ms ease;
+          animation: exit 300ms ease;
+  opacity: 0;
+}
+
+@-webkit-keyframes enter {
   from {
     opacity: 0;
+    margin-left: -100px;
   }
   to {
     opacity: 1;
+    margin-left: 0px;
   }
 }
 
-@keyframes swoop {
+@keyframes enter {
   from {
     opacity: 0;
+    margin-left: -100px;
   }
   to {
     opacity: 1;
+    margin-left: 0px;
+  }
+}
+
+@-webkit-keyframes main-enter {
+  from {
+    opacity: 0;
+    margin-top: 100px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0px;
+  }
+}
+
+@keyframes main-enter {
+  from {
+    opacity: 0;
+    margin-top: 100px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0px;
+  }
+}
+
+@-webkit-keyframes exit {
+  from {
+    opacity: 1;
+    margin-left: 0px;
+  }
+  to {
+    opacity: 0;
+    margin-left: 100px;
+  }
+}
+
+@keyframes exit {
+  from {
+    opacity: 1;
+    margin-left: 0px;
+  }
+  to {
+    opacity: 0;
+    margin-left: 100px;
   }
 }
 
@@ -368,8 +433,8 @@ video {
   -webkit-filter: invert(1);
           filter: invert(1);
   position: absolute;
-  -webkit-animation: veil 1.5s ease-in-out;
-          animation: veil 1.5s ease-in-out;
+  -webkit-animation: veil 1s ease-in-out;
+          animation: veil 1s ease-in-out;
 }
 
 @-webkit-keyframes veil {

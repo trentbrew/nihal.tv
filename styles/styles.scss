@@ -17,11 +17,15 @@ body {
     color: white;
 
     p {
-        font-size: 16px;
+        font-size: 24px;
     }
 
     .credit {
-        font-size: 14px;
+        font-size: 24px;
+    }
+
+    h1 {
+        transition: 300ms;
     }
 }
 
@@ -44,6 +48,7 @@ body {
     h1 {
         text-align: center;
         margin: 0px;
+        font-weight: bold;
     }
 
     p {
@@ -57,7 +62,7 @@ button {
     padding: 12px 24px 12px 24px;
     border: 2px solid white;
     margin: 18px 12px 18px 12px;
-    font-size: 18px;
+    font-size: 22px;
     cursor: pointer;
     transition: 200ms;
     display: inline-flex;
@@ -88,7 +93,6 @@ video {
     position: absolute;
     margin: auto;
     z-index: 5;
-    animation: swoop 1s ease-out;
     bottom: 0px;
     padding: 66px;
     width: calc(100% - 132px);
@@ -98,29 +102,38 @@ video {
     .layer-left {
         transition: 500ms;
         margin-bottom: -52px;
+
+        h1 {
+            //color:black;
+            //mix-blend-mode: difference;
+        }
     }
 
     .layer-left-active {
         transition: 500ms;
         margin-bottom: 280px;
+
+        h1 {
+            //color:red;
+        }
     }
 
     h1 {
-        font-size: 56px;
+        font-size: 60px;
         margin-bottom: 0px;
         //opacity: 0.7;
         //font-weight: normal;
     }
 
     .genre {
-        font-size: 18px;
+        font-size: 22px;
         margin-top: 6px;
         //font-weight: bold;
         opacity: 0.4;
     }
 
     .summary {
-       font-size: 18px; 
+       font-size: 22px; 
        max-width: 720px;
        margin-bottom: 22px;
        //opacity: 0.7;
@@ -201,6 +214,7 @@ video {
     background: rgba(0,0,0,0);
     color: white;
     margin: 0px;
+    font-size: 18px;
 
     &:hover {
         opacity: 0.3;
@@ -212,7 +226,7 @@ video {
         //background: red;
         background-image: url("../res/arrow-down.svg");
         background-size: contain;
-        background-position: 0px 4px;
+        background-position: 0px 5px;
         transform: rotate(180deg);
         filter: invert(1);
         background-repeat: no-repeat;
@@ -226,7 +240,7 @@ video {
         //background: red;
         background-image: url("../res/arrow-down.svg");
         background-size: contain;
-        background-position: 0px 8px;
+        background-position: 0px 5px;
         transform: rotate(0deg);
         filter: invert(1);
         background-repeat: no-repeat;
@@ -268,7 +282,8 @@ video {
 }
 
 .layer-main {
-    animation: swoop 1s ease-in-out;
+    animation: main-enter 1.3s ease-out;
+    //animation-delay: 6s;
     position: absolute;
     z-index: 5;
     margin: auto;
@@ -288,12 +303,47 @@ video {
     }
 }
 
-@keyframes swoop {
+.enter {
+    opacity: 1;
+    //margin-left: 0px;
+    animation: enter 700ms ease-out;
+}
+
+.exit {
+    animation: exit 300ms ease;
+    opacity: 0;
+}
+
+@keyframes enter {
     from {
         opacity: 0;
+        margin-left: -100px;
     }
     to {
         opacity: 1;
+        margin-left: 0px;
+    }
+}
+
+@keyframes main-enter {
+    from {
+        opacity: 0;
+        margin-top: 100px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+@keyframes exit {
+    from {
+        opacity: 1;
+        margin-left: 0px;
+    }
+    to {
+        opacity: 0;
+        margin-left: 100px;
     }
 }
 
@@ -371,7 +421,7 @@ video {
     filter: invert(1);
     position: absolute;
     //z-index: 7;
-    animation: veil 1.5s ease-in-out;
+    animation: veil 1s ease-in-out;
 
 }
 

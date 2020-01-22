@@ -70,19 +70,21 @@
                         <video loop data-autoplay muted v-bind:class="[ infoActive ? 'blur' : '' ]">
                             <source :src="i.finalFilm + '#t=85'" type="video/mp4" />
                         </video>
-                        <div class="layer" v-bind:class="">
+                        <div class="layer">
                             <div v-bind:class=" infoActive ? 'layer-left-active' : 'layer-left' ">
-                                <h1>{{i.title}}</h1>
-                                <p class="genre">{{i.genre}}</p>
-                                <p class="summary">{{i.summary}}</p>
-                                <button class="watch" @click="$refs.fullpage.api.moveSectionDown()">Watch film</button>
+                                <div v-bind:class="[ enter ? 'enter' : 'exit' ]">
+                                    <h1>{{i.title}}</h1>
+                                    <p class="genre">{{i.genre}}</p>
+                                    <p class="summary">{{i.summary}}</p>
+                                    <button class="watch" @click="$refs.fullpage.api.moveSectionDown()">Watch film</button>
+                                </div>
                             </div>
                             <button class="info" @click="toggleInfo()">{{ infoAmount }}<div v-bind:class="[infoActive ? 'arrow-down' : 'arrow' ]"></div></button>
                         </div>
                         <div class="more-info" v-bind:class="[infoActive ? 'more-info-active' : 'more-info-inactive' ]">
-                            <ul style="display: inline-flex; list-style: none; padding: 0px" class="images">
+                            <ul style="display: inline-flex; list-style: none; padding: 0px" class="images" :id="'images' + index">
                                 <li v-for="(p, index) in i.screenGrabs">
-                                    <img style="width: 256px" :src="p" :id="'shot' + index" />
+                                    <img style="width: 260px" :src="p" :id="'shot' + index" />
                                 </li>
                             </ul>
                             <br>
