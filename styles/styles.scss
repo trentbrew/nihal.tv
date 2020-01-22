@@ -531,4 +531,9 @@ video {
     img {
         width: 200px !important;
     }
+
+    .layer-left-active {
+        transition: 500ms;
+        margin-bottom: 260px;
+    }
 }

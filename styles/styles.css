@@ -554,5 +554,10 @@ video {
   img {
     width: 200px !important;
   }
+  .layer-left-active {
+    -webkit-transition: 500ms;
+    transition: 500ms;
+    margin-bottom: 260px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
