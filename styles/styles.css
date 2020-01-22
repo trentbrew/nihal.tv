@@ -98,6 +98,8 @@ video {
   background: linear-gradient(transparent, black);
   -webkit-transition: 500ms;
   transition: 500ms;
+  -webkit-animation: enter 1s ease;
+          animation: enter 1s ease;
 }
 
 .layer .layer-left {

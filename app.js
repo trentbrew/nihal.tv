@@ -237,7 +237,7 @@ new Vue({
             this.enter = false;
             //console.log('enter?: ' + this.enter);
 
-            console.log("direction: " + this.direction);
+            console.log("direction: " + direction);
 
         },
         toggleInfo() {
