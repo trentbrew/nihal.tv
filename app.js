@@ -231,11 +231,14 @@ new Vue({
             console.log("goodbye loader");
             this.displayLoader = false;
         },
-        handleLeave() {
+        handleLeave(direction) {
             console.log('left');
             this.infoActive = false;
             this.enter = false;
-            console.log('enter?: ' + this.enter);
+            //console.log('enter?: ' + this.enter);
+
+            console.log("direction: " + this.direction);
+
         },
         toggleInfo() {
             if(this.infoActive) {
@@ -246,7 +249,7 @@ new Vue({
                 this.infoActive = true
                 this.infoAmount = 'Less info'
             }
-            console.log("info active: " + this.infoActive);
+            //console.log("info active: " + this.infoActive);
         },
     }
 })
