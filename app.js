@@ -24,12 +24,17 @@ new Vue({
     },
     data(){
         return {
+            currentTab: 1,
             infoActive: false,
             infoAmount: 'More info',
             enter: false,
             exit: false,
             displayLoader: true,
+            displayVeil: false,
             currentTab: 0,
+            watch: false,
+            vidTime: 85,
+            fadingEffect: true,
             options: {
                 //parent: this,
                 afterLoad: this.handleLoad,
@@ -38,7 +43,7 @@ new Vue({
                 navigationPosition: 'right',
                 parallax: true,
                 lazyLoading: false,
-                scrollingSpeed: 1000
+                scrollingSpeed: 750
             },
             item: {
                 title: "",
@@ -70,9 +75,6 @@ new Vue({
         }, 5000)
     },
     methods: {
-        tabClick(tab) {
-            this.currentTab = tab
-        },
         componentsReady() {
             this.$refs.fullpage.init()
             this.$refs.fullpage.build()
@@ -222,23 +224,32 @@ new Vue({
                 }
             )
         },
-        handleLoad() {
-            console.log("Emitted 'after load' event");
-            this.enter = true;
-            console.log('enter?: ' + this.enter);
-        },
         removeLoader() {
             console.log("goodbye loader");
             this.displayLoader = false;
         },
         handleLeave(direction) {
-            console.log('left');
+            //console.log('left');
+            this.displayVeil = true;
             this.infoActive = false;
             this.enter = false;
+            this.watch = false;
             //console.log('enter?: ' + this.enter);
 
-            console.log("direction: " + direction);
+            //console.log("direction: " + direction);
 
+            console.log('begin animation');
+        },
+        handleLoad(destination, direction) {
+            //console.log("Emitted 'after load' event");
+            this.enter = true;
+            //console.log('enter?: ' + this.enter);
+            this.displayVeil = false;
+
+            //console.log('end animation');
+            //console.log("current section: " + this.items.length);
+
+            this.currentTab = direction.isLast;
         },
         toggleInfo() {
             if(this.infoActive) {
@@ -251,5 +262,26 @@ new Vue({
             }
             //console.log("info active: " + this.infoActive);
         },
+        toggleWatch() {
+            this.watch = !this.watch;
+            //console.log('watch?: ' + this.watch);
+            if(this.watch) {
+                this.vidTime = 0;
+                this.options.navigation = false;
+            }
+            else {
+                this.vidTime = 85;
+                this.options.navigation = true;
+            }  
+            //console.log(this.options);
+        },
+        sendEmail: (e) => {
+            emailjs.sendForm('gmail', 'template_zlljjLwb', e.target, 'user_kTZviK8cM7UnEbWOUl1bX')
+              .then((result) => {
+                  console.log('SUCCESS!', result.status, result.text);
+              }, (error) => {
+                  console.log('FAILED...', error);
+              });
+          }
     }
 })

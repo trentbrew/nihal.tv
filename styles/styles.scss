@@ -13,7 +13,7 @@ body {
     //font-family: 'Nunito', sans-serif;
     //font-family: 'Hind Siliguri', sans-serif;
     font-family: 'Yantramanav', sans-serif;
-    background: $colorMain;
+    background: black;
     color: white;
 
     p {
@@ -87,6 +87,7 @@ video {
     background-size: contain;
     object-fit: cover;
     transition: 400ms;
+    //pointer-events: none;
 }
 
 .layer {
@@ -125,20 +126,20 @@ video {
         //opacity: 0.7;
         //font-weight: normal;
     }
+}
 
-    .genre {
-        font-size: 22px;
-        margin-top: 6px;
-        //font-weight: bold;
-        opacity: 0.4;
-    }
+.genre {
+    font-size: 22px;
+    margin-top: 6px;
+    //font-weight: bold;
+    opacity: 0.4;
+}
 
-    .summary {
-       font-size: 22px; 
-       max-width: 720px;
-       margin-bottom: 22px;
-       //opacity: 0.7;
-    }
+.summary {
+   font-size: 22px; 
+   max-width: 720px;
+   margin-bottom: 22px;
+   //opacity: 0.7;
 }
 
 .watch {
@@ -152,7 +153,7 @@ video {
 }
 
 .blur {
-    filter: blur(35px);
+    filter: blur(24px);
 }
 
 .more-info {
@@ -202,7 +203,7 @@ video {
 
 .more-info-inactive {
     opacity: 0;
-    bottom: -360px;
+    bottom: -120px;
     .credits {
         //background: blue;
     }
@@ -307,12 +308,22 @@ video {
 .enter {
     opacity: 1;
     //margin-left: 0px;
-    animation: enter 700ms ease-out;
+    animation: enter 700ms ease;
 }
 
 .exit {
     animation: exit 300ms ease;
     opacity: 0;
+}
+
+.shadow-active {
+    //transition: 500ms;
+    //background:
+}
+
+.shadow-active {
+    //transition: 500ms;
+    //background:rgba(black, 1);
 }
 
 @keyframes enter {
@@ -323,6 +334,15 @@ video {
     to {
         opacity: 1;
         margin-left: 0px;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
 
@@ -405,7 +425,7 @@ video {
 
 .loader-active {
     filter: invert(1);
-    position: absolute;
+    position: fixed;
     z-index: 8;
     top: 0px;
     color: black;
@@ -414,36 +434,85 @@ video {
     margin: 0px;
     height: 100vh;
     padding: 0px;
+    transition: 1s;
 
     pointer-events: none;
 }
 
 .loader-inactive {
     filter: invert(1);
-    position: absolute;
-    //z-index: 7;
-    animation: veil 1s ease-in-out;
+    position: fixed;
+    z-index: 8;
+    top: 0px;
+    color: black;
+    background: black;
+    width: 100%;
+    margin: 0px;
+    height: 0vh;
+    padding: 0px;
+    transition: 1s;
+    //opacity: 0;
+    //pointer-events: none;
 
+}
+
+.veil-container {
+    position: fixed;
+    z-index: 11;
+    //background: red;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+}
+
+.veil-active {
+    position: fixed;
+    z-index: 12;
+    background: white;
+    top: 0px;
+    //width: 100%;
+    margin: 0px;
+    height: 100vh;
+    padding: 0px;
+    //animation: veil 1s ease-in-out;
+    //transition: 300ms;
+    top: 0px;
+    transition: 500ms;
+
+    pointer-events: none;
 }
 
 
 @keyframes veil {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 100%;
+        //right: 0px;
+    }
+    100% {
+        right: 0px;
+        width: 0%;
+    }
+}
+
+@keyframes loader-gone {
     from {
         position: absolute;
-        z-index: 8;
         //top: 0px;
         background: black;
         width: 100%;
         margin: 0px;
-        height: 100vh;
+        //height: 100vh;
+        opacity: 1;
 
     }
     to {
         background: black;
-        z-index: 8;
         width: 100%;
-        height: 0vh;
-        //opacity: 0;
+        //height: 0vh;
+        opacity: 0;
 
         .loader {
             opacity: 0;
@@ -522,13 +591,163 @@ strong {
     font-weight: normal;
 }
 
+.vid-window-active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:#101010;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    margin-top: 0px !important;
+    opacity:1;
+    transition: 500ms;
+    //padding-top: 0px;
+    z-index: 11;
+
+    video {
+        transition: 500ms;
+        margin-top: 0px;
+        width: 75%;
+        height: 75vh;
+        z-index: 12;
+    }
+}
+
+.vid-window-inactive {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #101010;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    margin-top: 0px !important;
+    opacity: 0;
+    transition: 500ms;
+    pointer-events: none;
+    //padding-top: 60px;
+
+    video {
+        transition: 500ms;
+        margin-top: 120px;
+        width: 75%;
+        height: 75vh;
+        z-index: 12;
+    }
+}
+
+.invisible {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.bio-content {
+    display:block;
+}
+
+.portrait-img {
+    background: gray;
+    width: 150px;
+    height: 150px;
+}
+
+.bio {
+    font-size: 18px;
+    font-weight: normal;
+    width: 75%;
+}
+
+.contact-footer {
+    //background: red;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
 
+.section-left {
+    background: #101010;
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+}
 
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.contact-form {
+    //background: red;
+    width: 18%;
+    //margin-left: 120px;
 
+    input[type="text"], input[type="email"] {
+        width: 100%;
+        height: 24px;
+        background: transparent;
+        border: 2px solid white;
+        color: white;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        padding: 3px 6px 3px 6px;
+    }
 
+    textarea {
+        width: 100%;
+        background: transparent;
+        border: 2px solid white;
+        color: white;
+        height: 120px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        padding: 3px 6px 3px 6px;
+    }
 
+    label {
+        margin-bottom: 12px;
+        font-size: 18px;
+    }
+}
+
+.email-submit {
+    padding: 12px 24px 12px 24px;
+    border: 2px solid white;
+    margin: 0px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 200ms;
+    display: inline-flex;
+    background: transparent;
+    color: white;
+    width: max-content !important;
+    height: max-content !important;
+
+    &:hover {
+        background: white;
+        color: black;
+    }
+}
+
+.foot {
+    
+}
 
 //---------- Tablet / Notebook styles ----------
 

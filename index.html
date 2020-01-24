@@ -29,23 +29,18 @@
         
         <div class = "container" id="app">
 
-
             <div v-bind:class="[displayLoader ? 'loader-active' : 'loader-inactive']">
                     <div class="loader">Loading...</div>
             </div>
 
-            <div v-bind:class="[displayLoader ? 'veil-active' : 'veil-inactive']">
-                    <div class="loader">Loading...</div>
-            </div>
-
-            <div class="navbar">
+            <div class="navbar" v-bind:class="[ watch ? 'invisible' : 'visible' ]">
 
                     
                 <div class="nav-text">
                     <ul>
-                        <li @click="{ tabClick(0); $refs.fullpage.api.moveTo(1) }" v-bind:class="[currentTab == 0 ? 'active' : '']">Film</li>
-                        <li @click="{ tabClick(1) }" v-bind:class="[currentTab == 1 ? 'active' : '']">Photo</li>
-                        <li @click="{ tabClick(2); $refs.fullpage.api.moveTo(items.length + 2) }" v-bind:class="[currentTab == 2 ? 'active' : '']" class="contact-link">Contact</li>
+                        <li @click="{ $refs.fullpage.api.moveTo(1) }" v-bind:class="[!currentTab ? 'active' : '']">Film</li>
+                        <li @click="{ }">Photo</li>
+                        <li @click="{ $refs.fullpage.api.moveTo(items.length + 2) }" v-bind:class="[currentTab ? 'active' : '']" class="contact-link">Contact</li>
                     </ul>
                 </div>
             </div>
@@ -58,11 +53,16 @@
                         <video loop data-autoplay muted>
                             <source :src="items[2].finalFilm + '#t=85'" type="video/mp4" />
                         </video>
+                        <div @click="toggleWatch()" v-bind:class="[watch ? 'vid-window-active' : 'vid-window-inactive']">
+                            <video controls autoplay v-bind:muted="!watch">
+                                <source :src="items[2].finalFilm + '#t=0'" type="video/mp4" />
+                            </video>
+                        </div>
                         <div class="layer-main">
                             <h1 class="hero-header">NIHAL DANTLURI</h1>
                             <p style="margin-bottom: 18px">Director of Photography</p>
-                            <button class="watch" @click="$refs.fullpage.api.moveSectionDown()">View Reel</button>
                             <button class="next" @click="$refs.fullpage.api.moveSectionDown()">View Work<!--div class="arrow"></div--></button>
+                            <button class="watch" @click="toggleWatch()">View Reel</button>
                         </div>
                     </div>
                     <!-- dynamic project sections -->
@@ -70,13 +70,18 @@
                         <video loop data-autoplay muted v-bind:class="[ infoActive ? 'blur' : '' ]">
                             <source :src="i.finalFilm + '#t=85'" type="video/mp4" />
                         </video>
-                        <div class="layer">
+                        <div @click="toggleWatch()" v-bind:class="[watch ? 'vid-window-active' : 'vid-window-inactive']">
+                            <video controls autoplay v-bind:muted="!watch">
+                                <source :src="i.finalFilm + '#t=0'" type="video/mp4" />
+                            </video>
+                        </div>
+                        <div class="layer" v-bind:class=" enter ? 'shadow-active' : 'shadow-inactive' ">
                             <div v-bind:class=" infoActive ? 'layer-left-active' : 'layer-left' ">
                                 <div v-bind:class="[ enter ? 'enter' : 'exit' ]">
                                     <h1>{{i.title}}</h1>
                                     <p class="genre">{{i.genre}}</p>
                                     <p class="summary">{{i.summary}}</p>
-                                    <button class="watch" @click="$refs.fullpage.api.moveSectionDown()">Watch film</button>
+                                    <button class="watch" @click="toggleWatch()">Watch film</button>
                                 </div>
                             </div>
                             <button class="info" @click="toggleInfo()">{{ infoAmount }}<div v-bind:class="[infoActive ? 'arrow-down' : 'arrow' ]"></div></button>
@@ -95,7 +100,34 @@
                     </div>
                     <!-- static contact footer -->
                     <div class="section contact-footer">
-                        
+                        <div class="contact-section section-left">
+                            <div class="bio-content">
+                                <div class="portrait-img"></div>
+                                <h1>NIHAL DANTLURI</h1>
+                                <p class="genre">Director of Photography</p>
+                                <p class="summary bio">Your Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                            <form class="contact-form" @submit.prevent="sendEmail">
+                                <label>Name</label>
+                                <br>
+                                <input type="text" name="from_name">
+                                <br>
+                                <label>Email</label>
+                                <br>
+                                <input type="email" name="user_email">
+                                <br>
+                                <label>Subject</label>
+                                <br>
+                                <input type="text" name="subject_html">
+                                <br>
+                                <label>Project Description</label>
+                                <br>
+                                <textarea name="message_html"></textarea>
+                                <br>
+                                <input class="email-submit" type="submit" value="Send">
+                            </form>
+                        </div>
+                        <div class="foot">Coded with love by Trent Brew</div>
                     </div>
                 </full-page>
             </div>
@@ -128,7 +160,14 @@
         
         </div>
 
-
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+            (function(){
+                emailjs.init("YOUR_USER_ID");
+            })();
+        </script>
         <!-- fullpage-->
         <script src="fullpage/fullpage.js"></script>
         <!-- app -->
