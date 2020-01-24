@@ -15,6 +15,9 @@ const firestore = firebase.firestore();
 const settings = {/* your settings... */ timestampsInSnapshots: true};
 firestore.settings(settings);
 
+// Initialize the FirebaseUI Widget using Firebase.
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
 new Vue({
     el: "#app",
     firestore() {
@@ -79,6 +82,12 @@ new Vue({
             this.$refs.fullpage.init()
             this.$refs.fullpage.build()
             console.log('fullpage initialized');
+            /*ui.start('#firebaseui-auth-container', {
+                signInOptions: [
+                  firebase.auth.EmailAuthProvider.PROVIDER_ID
+                ],
+                // Other config options...
+            });*/
         },
         add() {
             console.log('clicked')

@@ -102,7 +102,7 @@ video {
     animation: enter 1s ease;
 
     .layer-left {
-        transition: 500ms;
+        transition: 300ms;
         margin-bottom: -52px;
 
         h1 {
@@ -112,7 +112,7 @@ video {
     }
 
     .layer-left-active {
-        transition: 500ms;
+        transition: 300ms ease;
         margin-bottom: 280px;
 
         h1 {
@@ -377,10 +377,11 @@ video {
     width: 100%;
     margin: 0px;
     height: 60px;
-    padding: 36px 0px 0px 60px;
 
-    .nav-text {
-        ul {
+    .nav-inner {
+        padding: 36px 0px 0px 60px;
+
+        .nav-left {
             display: inline-flex;
             padding: 0px;
             margin: 0px;
@@ -397,6 +398,51 @@ video {
                 &:hover {
                     opacity: 0.3;
                 }
+            }
+        }
+
+        .nav-right {
+            display: inline-flex;
+            padding: 0px;
+            margin: 0px;
+            float: right;
+
+            li {
+                text-decoration: none;
+                margin: 0px 36px 0px 0px;
+                padding: 0px;
+                line-height: 60px;
+                color: white;
+                font-size: 18px;
+                cursor: pointer;
+                transition: 200ms;
+
+                &:hover {
+                    opacity: 0.3;
+                }
+            }
+
+            .social-link {
+                //background: white;
+                height: 18px;
+                width: 24px;
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                filter: invert(1);
+            }
+
+            .imdb {
+                transform: scale(1.9);
+                background-image: url('../res/icons/imdb.png');
+            }
+
+            .vimeo {
+                background-image: url('../res/icons/vimeo.png');
+            }
+
+            .instagram {
+                background-image: url('../res/icons/insta.png');
             }
         }
 
@@ -746,7 +792,33 @@ strong {
 }
 
 .foot {
-    
+    position: absolute;
+    background: black;
+    width: 100%;
+    //height: 42px;
+    bottom: 0px;
+    text-align: center;
+    padding: 6px;
+
+    .love {
+        width: 18px;
+        height: 18px;
+        background-image: url('../res/icons/vimeo.png');
+    }
+
+    p {
+        opacity: 0.6;
+        font-size: 14px;
+        font-weight: normal;
+    }
+
+    a {
+        color: white;
+
+        &:hover {
+            font-weight: bold;
+        }
+    }
 }
 
 //---------- Tablet / Notebook styles ----------

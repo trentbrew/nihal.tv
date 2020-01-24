@@ -103,14 +103,14 @@ video {
 }
 
 .layer .layer-left {
-  -webkit-transition: 500ms;
-  transition: 500ms;
+  -webkit-transition: 300ms;
+  transition: 300ms;
   margin-bottom: -52px;
 }
 
 .layer .layer-left-active {
-  -webkit-transition: 500ms;
-  transition: 500ms;
+  -webkit-transition: 300ms ease;
+  transition: 300ms ease;
   margin-bottom: 280px;
 }
 
@@ -388,10 +388,13 @@ video {
   width: 100%;
   margin: 0px;
   height: 60px;
+}
+
+.navbar .nav-inner {
   padding: 36px 0px 0px 60px;
 }
 
-.navbar .nav-text ul {
+.navbar .nav-inner .nav-left {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -399,7 +402,7 @@ video {
   margin: 0px;
 }
 
-.navbar .nav-text ul li {
+.navbar .nav-inner .nav-left li {
   margin: 0px 36px 0px 0px;
   padding: 0px;
   line-height: 60px;
@@ -410,19 +413,68 @@ video {
   transition: 200ms;
 }
 
-.navbar .nav-text ul li:hover {
+.navbar .nav-inner .nav-left li:hover {
   opacity: 0.3;
 }
 
-.navbar .nav-text .active {
+.navbar .nav-inner .nav-right {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0px;
+  margin: 0px;
+  float: right;
+}
+
+.navbar .nav-inner .nav-right li {
+  text-decoration: none;
+  margin: 0px 36px 0px 0px;
+  padding: 0px;
+  line-height: 60px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.navbar .nav-inner .nav-right li:hover {
+  opacity: 0.3;
+}
+
+.navbar .nav-inner .nav-right .social-link {
+  height: 18px;
+  width: 24px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+.navbar .nav-inner .nav-right .imdb {
+  -webkit-transform: scale(1.9);
+          transform: scale(1.9);
+  background-image: url("../res/icons/imdb.png");
+}
+
+.navbar .nav-inner .nav-right .vimeo {
+  background-image: url("../res/icons/vimeo.png");
+}
+
+.navbar .nav-inner .nav-right .instagram {
+  background-image: url("../res/icons/insta.png");
+}
+
+.navbar .nav-inner .active {
   border-bottom: 3px solid white;
 }
 
-.navbar .nav-text .active:hover {
+.navbar .nav-inner .active:hover {
   opacity: 1;
 }
 
-.navbar .nav-text .inactive {
+.navbar .nav-inner .inactive {
   font-weight: normal;
   border-bottom: none;
 }
@@ -802,6 +854,35 @@ strong {
 .email-submit:hover {
   background: white;
   color: black;
+}
+
+.foot {
+  position: absolute;
+  background: black;
+  width: 100%;
+  bottom: 0px;
+  text-align: center;
+  padding: 6px;
+}
+
+.foot .love {
+  width: 18px;
+  height: 18px;
+  background-image: url("../res/icons/vimeo.png");
+}
+
+.foot p {
+  opacity: 0.6;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.foot a {
+  color: white;
+}
+
+.foot a:hover {
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 1370px) {

@@ -10,20 +10,12 @@
 
         <!--fullpage-->
         <link rel="stylesheet" href="fullpage/fullpage.css">
+
+        <!--firebase auth ui-->
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
         
         <!--fonts-->
         <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri|Nunito|Roboto+Condensed|Yantramanav&display=swap" rel="stylesheet">
-
-        <!-- Vue -->   
-        <script src="https://unpkg.com/vue"></script>
-        <!-- firebase -->
-        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
-        <!-- firestore -->
-        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-firestore.js"></script>
-        <!-- vue-firestore -->   
-        <script src="https://unpkg.com/vue-firestore"></script>
-        <!-- storage -->
-        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-storage.js"></script>
     </head>
     <body>
         
@@ -36,11 +28,17 @@
             <div class="navbar" v-bind:class="[ watch ? 'invisible' : 'visible' ]">
 
                     
-                <div class="nav-text">
-                    <ul>
+                <div class="nav-inner">
+                    <ul class="nav-left">
                         <li @click="{ $refs.fullpage.api.moveTo(1) }" v-bind:class="[!currentTab ? 'active' : '']">Film</li>
                         <li @click="{ }">Photo</li>
                         <li @click="{ $refs.fullpage.api.moveTo(items.length + 2) }" v-bind:class="[currentTab ? 'active' : '']" class="contact-link">Contact</li>
+                    </ul>
+
+                    <ul class="nav-right">
+                        <li><a href="https://www.imdb.com/name/nm7577022/?ref_=nv_sr_srsg_0" target="_blank"><div class="social-link imdb"></div></a></li>
+                        <li><a href="https://vimeo.com/nihaldantluri" target="_blank"><div class="social-link vimeo"></div></a></li>
+                        <li><a href="https://www.instagram.com/nihal_dantluri/" target="_blank"><div class="social-link instagram"></div></a></li>
                     </ul>
                 </div>
             </div>
@@ -127,7 +125,7 @@
                                 <input class="email-submit" type="submit" value="Send">
                             </form>
                         </div>
-                        <div class="foot">Coded with love by Trent Brew</div>
+                        <div class="foot"><p>Coded with <span class="love">♡</span> by <a href="https://tbrew1023.github.io/portfolio-v2" target="_blank">Trent Brew</a></p></div>
                     </div>
                 </full-page>
             </div>
@@ -159,6 +157,21 @@
             </div-->
         
         </div>
+
+        <!-- Vue -->   
+        <script src="https://unpkg.com/vue"></script>
+        <!-- firebase -->
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
+        <!-- firestore -->
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-firestore.js"></script>
+        <!-- vue-firestore -->   
+        <script src="https://unpkg.com/vue-firestore"></script>
+        <!-- storage -->
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-storage.js"></script>
+        <!--firebase ui-->
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <!--firebase auth-->
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
 
         <script type="text/javascript"
             src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
