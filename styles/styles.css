@@ -892,6 +892,52 @@ strong {
   img {
     width: 112px !important;
   }
+  .bio-content {
+    margin-left: 24px !important;
+    padding-top: 12px !important;
+  }
+  .bio {
+    margin-bottom: 0px !important;
+    width: 83% !important;
+  }
+  .contact-form {
+    padding: 12px 24px 12px 24px;
+    width: 72%;
+  }
+  .section-left {
+    display: block;
+    margin-left: 0px !important;
+    padding-top: 80px;
+    margin-bottom: 170px !important;
+  }
+  .section-left label {
+    font-size: 12px;
+    margin: 0px !important;
+  }
+  .section-left input[type="text"], .section-left input[type="email"] {
+    height: 12px !important;
+    margin: 6px 0px 6px 0px !important;
+  }
+  .section-left input[type="submit"] {
+    padding: 3px 6px 3px 6px;
+    font-size: 12px;
+    margin: 0px !important;
+  }
+  .section-left textarea {
+    height: 42px !important;
+  }
+  .section-left .portrait-img {
+    width: 64px;
+    height: 64px;
+  }
+  .section-left h1 {
+    font-size: 28px !important;
+    margin-left: 0px !important;
+    margin-bottom: 12px !important;
+  }
+  .section-left p {
+    font-size: 12px !important;
+  }
   .layer-left-active {
     -webkit-transition: 1.5s;
     transition: 1.5s;
@@ -905,6 +951,12 @@ strong {
   }
   .more-info .credits p {
     font-size: 12px !important;
+  }
+  .foot {
+    padding: 0px !important;
+  }
+  .foot p {
+    font-size: 8px;
   }
   .images {
     display: -ms-grid !important;

@@ -832,6 +832,63 @@ strong {
         width: 112px !important;
     }
 
+    .bio-content {
+        margin-left: 24px !important;
+        padding-top: 12px !important;
+    }
+
+    .bio {
+        margin-bottom: 0px !important;
+        width: 83% !important;
+    }
+
+    .contact-form {
+        padding: 12px 24px 12px 24px;
+        width: 72%;
+    }
+
+    .section-left {
+        display: block;
+        margin-left: 0px !important;
+        padding-top: 80px;
+        margin-bottom: 170px !important;
+
+        label {
+            font-size: 12px;
+            margin: 0px !important;
+        }
+
+        input[type="text"], input[type="email"] {
+            height: 12px !important;
+            margin: 6px 0px 6px 0px !important;
+        }
+
+        input[type="submit"] {
+            padding: 3px 6px 3px 6px;
+            font-size: 12px;
+            margin: 0px !important;
+        }
+
+        textarea {
+            height: 42px !important;
+        }
+
+        .portrait-img {
+            width: 64px;
+            height: 64px;
+        }
+
+        h1 {
+            font-size: 28px !important;
+            margin-left: 0px !important;
+            margin-bottom: 12px !important;
+        }
+
+        p {
+            font-size: 12px !important;
+        }
+    }
+
     .layer-left-active {
         transition: 1.5s;
         margin-bottom: 342px !important;
@@ -848,7 +905,12 @@ strong {
         }
     }
 
-
+    .foot {
+        padding: 0px !important;
+        p {
+            font-size: 8px;
+        }
+    }
 
     .images {
         display: grid !important;
