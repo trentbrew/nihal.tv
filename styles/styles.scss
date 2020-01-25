@@ -192,6 +192,10 @@ video {
     display: none;
 }
 
+#shot1 {
+    display: none;
+}
+
 .more-info-active {
     opacity: 1;
     bottom: 0px;
@@ -472,7 +476,7 @@ video {
 .loader-active {
     filter: invert(1);
     position: fixed;
-    z-index: 8;
+    z-index: 35;
     top: 0px;
     color: black;
     background: black;
@@ -488,7 +492,7 @@ video {
 .loader-inactive {
     filter: invert(1);
     position: fixed;
-    z-index: 8;
+    z-index: 35;
     top: 0px;
     color: black;
     background: black;
@@ -659,9 +663,9 @@ strong {
     video {
         transition: 500ms;
         margin-top: 0px;
-        width: 75%;
-        height: 75vh;
-        z-index: 12;
+        width: 80%;
+        height: 30%;
+
     }
 }
 
@@ -823,13 +827,134 @@ strong {
 
 //---------- Tablet / Notebook styles ----------
 
-@media only screen and (max-width: 1370px) {
+@media only screen and (max-width: 768px) {
     img {
-        width: 200px !important;
+        width: 112px !important;
     }
 
     .layer-left-active {
-        transition: 500ms;
-        margin-bottom: 220px !important;
+        transition: 1.5s;
+        margin-bottom: 342px !important;
+    }
+
+    .more-info {
+        padding: 24px !important; 
+
+        .credits {
+            width: 85% !important;
+            p {
+                font-size: 12px !important;
+            }
+        }
+    }
+
+
+
+    .images {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        margin: 12px 0px 0px 0px !important;
+        width: fit-content !important;
+
+        li {
+            width: 0px;
+        }
+
+        img {
+            padding-right: 12px !important;
+        }
+    }
+
+    h1 {
+        font-size: 36px !important;
+        margin-left: 24px !important; 
+        text-align: left !important;
+    }
+
+    .layer {
+        padding: 24px;
+        width: 100%;
+
+        .layer-left {
+            margin-bottom: -32px;
+        }
+
+        h1 {
+            margin: 0px !important;
+            font-size: 28px;
+        }
+
+        .genre {
+            font-size: 14px;
+        }
+    
+        .summary {
+            font-size: 14px;
+            width: 80%;
+        }
+    }
+
+    .layer-main {
+
+        text-align: left;
+        height: 55vh !important;
+        margin-bottom: 0px;
+        animation: none !important;
+
+        p {
+            font-size: 18px !important; 
+            text-align: left !important;
+            margin-left: 24px !important;
+        }
+    }
+
+    button {
+        margin: 0px 12px 0px 0px !important;
+        font-size: 14px;
+        padding: 6px 12px 6px 12px;
+    }
+
+    .info {
+        padding-right: 24px;
+        font-size: 14px;
+    }
+
+    #fp-nav {
+        //background: red !important;
+        transform: scale(0.8) !important;
+        right: 12px !important;
+    }
+
+    .hero-buttons {
+        position: absolute;
+        margin-left: 24px;
+        bottom: 36px;
+    }
+
+    .navbar {
+
+        .nav-left {
+            //background: red !important;
+        }
+
+        li {
+            font-size: 12px !important;
+            margin-right: 24px !important;
+        }
+
+        .nav-inner {
+            padding: 6px 24px 0px 24px !important;
+        }
+
+        .nav-right {
+            height: 60px !important;
+
+            li {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                margin: 0px 0px 0px 24px !important;
+            }
+        }
     }
 }

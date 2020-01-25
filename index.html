@@ -52,15 +52,19 @@
                             <source :src="items[2].finalFilm + '#t=85'" type="video/mp4" />
                         </video>
                         <div @click="toggleWatch()" v-bind:class="[watch ? 'vid-window-active' : 'vid-window-inactive']">
-                            <video controls autoplay v-bind:muted="!watch">
-                                <source :src="items[2].finalFilm + '#t=0'" type="video/mp4" />
-                            </video>
+                            <div class="vid-container">
+                                <video controls autoplay v-bind:muted="!watch">
+                                    <source :src="items[2].finalFilm + '#t=0'" type="video/mp4" />
+                                </video>
+                            </div>
                         </div>
                         <div class="layer-main">
                             <h1 class="hero-header">NIHAL DANTLURI</h1>
                             <p style="margin-bottom: 18px">Director of Photography</p>
-                            <button class="next" @click="$refs.fullpage.api.moveSectionDown()">View Work<!--div class="arrow"></div--></button>
-                            <button class="watch" @click="toggleWatch()">View Reel</button>
+                            <div class="hero-buttons">
+                                <button class="next" @click="$refs.fullpage.api.moveSectionDown()">View Work<!--div class="arrow"></div--></button>
+                                <button class="watch" @click="toggleWatch()">View Reel</button>
+                            </div>
                         </div>
                     </div>
                     <!-- dynamic project sections -->
@@ -103,7 +107,7 @@
                                 <div class="portrait-img"></div>
                                 <h1>NIHAL DANTLURI</h1>
                                 <p class="genre">Director of Photography</p>
-                                <p class="summary bio">Your Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <p class="summary bio">Your Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                             </div>
                             <form class="contact-form" @submit.prevent="sendEmail">
                                 <label>Name</label>
