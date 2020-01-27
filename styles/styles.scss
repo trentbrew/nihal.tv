@@ -80,8 +80,8 @@ button {
 }
 
 video {
-    width: 120%;
-    height: 100%;
+    width: 100%;
+    height: 100vh !important;
     background-attachment: fixed;
     background-position: center;
     background-size: contain;
@@ -164,7 +164,7 @@ video {
     bottom:0px;
     padding: 66px;
     max-width: 1000px;
-    transition: 500ms;
+    transition: 300ms;
     pointer-events: none;
 
     /*ul:nth-child(0) {
@@ -221,6 +221,15 @@ video {
     color: white;
     margin: 0px;
     font-size: 18px;
+
+    -webkit-tap-highlight-color: transparent;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
     &:hover {
         opacity: 0.3;
@@ -481,10 +490,11 @@ video {
     color: black;
     background: black;
     width: 100%;
-    margin: 0px;
+    margin: 0px !important;
     height: 100vh;
-    padding: 0px;
+    padding: 0px !important;
     transition: 1s;
+    margin: 0px;
 
     pointer-events: none;
 }
@@ -497,9 +507,9 @@ video {
     color: black;
     background: black;
     width: 100%;
-    margin: 0px;
+    margin: 0px !important;
     height: 0vh;
-    padding: 0px;
+    padding: 0px !important;
     transition: 1s;
     //opacity: 0;
     //pointer-events: none;
@@ -508,7 +518,7 @@ video {
 
 .veil-container {
     position: fixed;
-    z-index: 11;
+    z-index: 30;
     //background: red;
     width: 100%;
     height: 100vh;
@@ -641,7 +651,7 @@ strong {
     font-weight: normal;
 }
 
-.vid-window-active {
+.vid-window-active, .vid-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -661,11 +671,11 @@ strong {
     z-index: 11;
 
     video {
+        width: 90%;
         transition: 500ms;
         margin-top: 0px;
-        width: 80%;
-        height: 30%;
-
+        transform: scale(0.7);
+        z-index: 12;
     }
 }
 
@@ -691,8 +701,8 @@ strong {
     video {
         transition: 500ms;
         margin-top: 120px;
-        width: 75%;
-        height: 75vh;
+        //width: 75%;
+        //height: 75vh;
         z-index: 12;
     }
 }
@@ -916,7 +926,7 @@ strong {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         margin: 12px 0px 0px 0px !important;
-        width: fit-content !important;
+        width: 75%;
 
         li {
             width: 0px;
@@ -1017,6 +1027,13 @@ strong {
                 align-items: center !important;
                 margin: 0px 0px 0px 24px !important;
             }
+        }
+    }
+
+    .vid-window-active {
+        video {
+            height: 35% !important;
+            width: 120% !important;
         }
     }
 }
