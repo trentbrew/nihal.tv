@@ -722,6 +722,8 @@ strong {
   -webkit-transform: scale(0.7);
           transform: scale(0.7);
   z-index: 12;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .vid-window-inactive {

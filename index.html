@@ -53,7 +53,7 @@
                         </video>
                         <div @click="toggleWatch()" v-bind:class="[watch ? 'vid-window-active' : 'vid-window-inactive']">
                             <div class="vid-container">
-                                <video controls autoplay v-bind:muted="!watch">
+                                <video controls v-bind:muted="!watch">
                                     <source :src="items[2].finalFilm + '#t=0'" type="video/mp4" />
                                 </video>
                             </div>
@@ -73,7 +73,7 @@
                             <source :src="i.finalFilm + '#t=88'" type="video/mp4" />
                         </video>
                         <div @click="toggleWatch()" v-bind:class="[watch ? 'vid-window-active' : 'vid-window-inactive']">
-                            <video controls autoplay v-bind:muted="!watch">
+                            <video controls v-bind:muted="!watch">
                                 <source :src="i.finalFilm + '#t=0'" type="video/mp4" />
                             </video>
                         </div>
