@@ -85,7 +85,7 @@ video {
     background-attachment: fixed;
     background-position: center;
     background-size: contain;
-    object-fit: cover;
+    object-fit: NONE;
     transition: 400ms;
     //pointer-events: none;
 }
@@ -1030,10 +1030,9 @@ strong {
         }
     }
 
-    .vid-window-active {
-        video {
-            height: 35% !important;
-            width: 120% !important;
-        }
+    video {
+        height: 35% !important;
+        width: 100% !important;
+        object-fit: contain;
     }
 }

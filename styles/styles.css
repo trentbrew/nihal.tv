@@ -81,8 +81,8 @@ video {
   background-attachment: fixed;
   background-position: center;
   background-size: contain;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: NONE;
+     object-fit: NONE;
   -webkit-transition: 400ms;
   transition: 400ms;
 }
@@ -1055,9 +1055,11 @@ strong {
             align-items: center !important;
     margin: 0px 0px 0px 24px !important;
   }
-  .vid-window-active video {
+  video {
     height: 35% !important;
-    width: 120% !important;
+    width: 100% !important;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 }
 /*# sourceMappingURL=styles.css.map */
