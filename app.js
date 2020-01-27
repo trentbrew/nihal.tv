@@ -75,7 +75,7 @@ new Vue({
             console.log("item count: " + parentObj.items.length);
             parentObj.componentsReady();
             parentObj.removeLoader();
-        }, 5000)
+        }, 500)
     },
     methods: {
         componentsReady() {
