@@ -674,7 +674,7 @@ strong {
         width: 90%;
         transition: 500ms;
         margin-top: 0px;
-        transform: scale(0.7);
+        transform: scale(0.85);
         z-index: 12;
         object-fit: contain;
     }
@@ -886,9 +886,19 @@ strong {
         width: 112px !important;
     }
 
+    .vid-window-active {
+        background: black;
+        
+        video {
+            height: 30% !important;
+            transform: scale(1);
+        }
+    }
+
     .bio-content {
         margin-left: 24px !important;
         padding-top: 12px !important;
+        width: 100% !important;
     }
 
     .bio {
