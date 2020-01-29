@@ -112,21 +112,21 @@
                             <form class="contact-form" @submit.prevent="sendEmail">
                                 <label>Name</label>
                                 <br>
-                                <input type="text" name="from_name">
+                                <input @click="emailSent = false" type="text" name="from_name" v-model="message.from_name">
                                 <br>
                                 <label>Email</label>
                                 <br>
-                                <input type="email" name="user_email">
+                                <input @click="emailSent = false" type="email" name="user_email" v-model="message.user_email">
                                 <br>
                                 <label>Subject</label>
                                 <br>
-                                <input type="text" name="subject_html">
+                                <input @click="emailSent = false" type="text" name="subject_html" v-model="message.subject_html">
                                 <br>
-                                <label>Project Description</label>
+                                <label>Message</label>
                                 <br>
-                                <textarea name="message_html"></textarea>
+                                <textarea @click="emailSent = false" name="message_html" v-model="message.message_html"></textarea>
                                 <br>
-                                <input class="email-submit" type="submit" value="Send">
+                                <input type="submit" v-bind:value="[ emailSent ? '✓ Message sent' : 'Send' ]" v-bind:class="[ emailSent ? 'email-sent' : 'email-submit' ]">
                             </form>
                         </div>
                         <div class="foot"><p>Coded with <span class="love">♡</span> by <a href="https://tbrew1023.github.io/portfolio-v2" target="_blank">Trent Brew</a></p></div>
@@ -172,19 +172,11 @@
         <script src="https://unpkg.com/vue-firestore"></script>
         <!-- storage -->
         <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-storage.js"></script>
-        <!--firebase ui-->
-        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-        <!--firebase auth-->
-        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
-
+        <!-- emailjs -->
         <script type="text/javascript"
             src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
         </script>
-        <script type="text/javascript">
-            (function(){
-                emailjs.init("YOUR_USER_ID");
-            })();
-        </script>
+        <script type="text/javascript">(function(){emailjs.init("user_kTZviK8cM7UnEbWOUl1bX");})();</script>
         <!-- fullpage-->
         <script src="fullpage/fullpage.js"></script>
         <!-- app -->

@@ -15,9 +15,6 @@ const firestore = firebase.firestore();
 const settings = {/* your settings... */ timestampsInSnapshots: true};
 firestore.settings(settings);
 
-// Initialize the FirebaseUI Widget using Firebase.
-var ui = new firebaseui.auth.AuthUI(firebase.auth());
-
 new Vue({
     el: "#app",
     firestore() {
@@ -27,6 +24,13 @@ new Vue({
     },
     data(){
         return {
+            emailSent: false,
+            message: {
+                from_name: '',
+                user_email: '',
+                subject_html: '',
+                message_html: ''
+            },
             currentTab: 1,
             infoActive: false,
             infoAmount: 'More info',
@@ -66,6 +70,10 @@ new Vue({
         }
     },
     mounted: function() {
+
+        console.log('email sent?: ' + this.emailSent);
+
+        console.log(this)
 
         //----- Loading component and initializing fullpage -----
 
@@ -284,10 +292,18 @@ new Vue({
             }  
             //console.log(this.options);
         },
+        handleSubmit() {
+            this.emailSent = true;
+            this.message.from_name = '';
+            this.message.user_email = '';
+            this.message.subject_html = '';
+            this.message.message_html = '';
+        },
         sendEmail: (e) => {
             emailjs.sendForm('gmail', 'template_zlljjLwb', e.target, 'user_kTZviK8cM7UnEbWOUl1bX')
               .then((result) => {
                   console.log('SUCCESS!', result.status, result.text);
+                  
               }, (error) => {
                   console.log('FAILED...', error);
               });

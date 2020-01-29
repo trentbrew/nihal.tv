@@ -153,7 +153,7 @@ video {
 }
 
 .blur {
-    filter: blur(24px);
+    filter: blur(30px);
 }
 
 .more-info {
@@ -676,7 +676,7 @@ strong {
         margin-top: 0px;
         transform: scale(0.7);
         z-index: 12;
-        object-fit: cover;
+        object-fit: contain;
     }
 }
 
@@ -775,7 +775,7 @@ strong {
         background: transparent;
         border: 2px solid white;
         color: white;
-        height: 120px;
+        height: 200px;
         margin-top: 12px;
         margin-bottom: 12px;
         padding: 3px 6px 3px 6px;
@@ -787,11 +787,26 @@ strong {
     }
 }
 
+.email-sent {
+    padding: 12px 24px 12px 24px;
+    border: 2px solid #66BB6A;
+    margin: 0px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 200ms;
+    display: inline-flex;
+    background: transparent;
+    color: #66BB6A;
+    width: max-content !important;
+    height: max-content !important;
+    pointer-events: none;
+}
+
 .email-submit {
     padding: 12px 24px 12px 24px;
     border: 2px solid white;
     margin: 0px;
-    font-size: 22px;
+    font-size: 18px;
     cursor: pointer;
     transition: 200ms;
     display: inline-flex;
@@ -836,7 +851,35 @@ strong {
     }
 }
 
-//---------- Tablet / Notebook styles ----------
+//---------- tablet ----------
+
+@media only screen and (max-width: 1366px) {
+
+    img {
+        width: 180px !important;
+    }
+
+    .layer-left-active {
+        margin-bottom: 220px !important;
+    }
+
+    .credit {
+        font-size: 16px !important;
+    }
+
+    .bio-content {
+        width: 35%;
+    }
+
+    .vid-window-active {
+        video {
+            height: 75% !important;
+        }
+    }
+
+}
+
+//---------- mobile ----------
 
 @media only screen and (max-width: 768px) {
     img {

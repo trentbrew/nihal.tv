@@ -136,8 +136,8 @@ video {
 }
 
 .blur {
-  -webkit-filter: blur(24px);
-          filter: blur(24px);
+  -webkit-filter: blur(30px);
+          filter: blur(30px);
 }
 
 .more-info {
@@ -722,8 +722,8 @@ strong {
   -webkit-transform: scale(0.7);
           transform: scale(0.7);
   z-index: 12;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .vid-window-inactive {
@@ -831,7 +831,7 @@ strong {
   background: transparent;
   border: 2px solid white;
   color: white;
-  height: 120px;
+  height: 200px;
   margin-top: 12px;
   margin-bottom: 12px;
   padding: 3px 6px 3px 6px;
@@ -842,11 +842,33 @@ strong {
   font-size: 18px;
 }
 
+.email-sent {
+  padding: 12px 24px 12px 24px;
+  border: 2px solid #66BB6A;
+  margin: 0px;
+  font-size: 18px;
+  cursor: pointer;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background: transparent;
+  color: #66BB6A;
+  width: -webkit-max-content !important;
+  width: -moz-max-content !important;
+  width: max-content !important;
+  height: -webkit-max-content !important;
+  height: -moz-max-content !important;
+  height: max-content !important;
+  pointer-events: none;
+}
+
 .email-submit {
   padding: 12px 24px 12px 24px;
   border: 2px solid white;
   margin: 0px;
-  font-size: 22px;
+  font-size: 18px;
   cursor: pointer;
   -webkit-transition: 200ms;
   transition: 200ms;
@@ -895,6 +917,24 @@ strong {
 
 .foot a:hover {
   font-weight: bold;
+}
+
+@media only screen and (max-width: 1366px) {
+  img {
+    width: 180px !important;
+  }
+  .layer-left-active {
+    margin-bottom: 220px !important;
+  }
+  .credit {
+    font-size: 16px !important;
+  }
+  .bio-content {
+    width: 35%;
+  }
+  .vid-window-active video {
+    height: 75% !important;
+  }
 }
 
 @media only screen and (max-width: 768px) {
