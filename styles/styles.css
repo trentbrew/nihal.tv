@@ -431,7 +431,7 @@ video {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  padding: 0px;
+  padding: 22px;
   margin: 0px;
   float: right;
 }
@@ -494,13 +494,11 @@ video {
 }
 
 .loader-active {
-  -webkit-filter: invert(1);
-          filter: invert(1);
   position: fixed;
   z-index: 35;
   top: 0px;
   color: black;
-  background: black;
+  background: #101010;
   width: 100%;
   margin: 0px !important;
   height: 100vh;
@@ -512,13 +510,11 @@ video {
 }
 
 .loader-inactive {
-  -webkit-filter: invert(1);
-          filter: invert(1);
   position: fixed;
   z-index: 35;
   top: 0px;
   color: black;
-  background: black;
+  background: #101010;
   width: 100%;
   margin: 0px !important;
   height: 0vh;
@@ -686,6 +682,27 @@ video {
 
 strong {
   font-weight: normal;
+}
+
+.vid-exit {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  font-size: 22px;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  line-height: 32px;
+  margin: 48px;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  text-align: center;
+  cursor: pointer;
+}
+
+.vid-exit:hover {
+  background: white;
+  color: black;
 }
 
 .vid-window-active, .vid-container {

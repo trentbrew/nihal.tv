@@ -51,7 +51,8 @@
                         <video loop data-autoplay muted>
                             <source :src="items[2].finalFilm + '#t=138'" type="video/mp4" />
                         </video>
-                        <div @click="toggleWatch()" v-bind:class="[watch ? 'vid-window-active' : 'vid-window-inactive']">
+                        <div v-bind:class="[watch ? 'vid-window-active' : 'vid-window-inactive']">
+                            <div @click="toggleWatch()" class="vid-exit">X</div>
                             <div class="vid-container">
                                 <video controls v-bind:muted="!watch">
                                     <source :src="items[2].finalFilm + '#t=0'" type="video/mp4" />
@@ -72,7 +73,8 @@
                         <video loop data-autoplay muted v-bind:class="[ infoActive ? 'blur' : '' ]">
                             <source :src="i.finalFilm + '#t=88'" type="video/mp4" />
                         </video>
-                        <div @click="toggleWatch()" v-bind:class="[watch ? 'vid-window-active' : 'vid-window-inactive']">
+                        <div v-bind:class="[watch ? 'vid-window-active' : 'vid-window-inactive']">
+                            <div @click="toggleWatch()" class="vid-exit">X</div>
                             <video controls v-bind:muted="!watch">
                                 <source :src="i.finalFilm + '#t=0'" type="video/mp4" />
                             </video>
