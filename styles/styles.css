@@ -1110,6 +1110,7 @@ strong {
   }
   .navbar .nav-right {
     height: 60px !important;
+    padding: 0px !important;
   }
   .navbar .nav-right li {
     display: -webkit-box !important;
