@@ -6,6 +6,8 @@
         <title>Nihal.tv</title>
         <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
 
+        <link rel="icon" type="image/svg" href="res/videocam-24px.svg">
+
         <link rel="stylesheet" href="styles/styles.css">
 
         <!--fullpage-->
@@ -49,13 +51,13 @@
                     <!-- static hero section -->
                     <div class="section hero-section">
                         <video loop data-autoplay muted>
-                            <source :src="items[2].finalFilm + '#t=138'" type="video/mp4" />
+                            <source :src="filmReel[1].finalFilm + '#t=138'" type="video/mp4" />
                         </video>
                         <div v-bind:class="[watch ? 'vid-window-active' : 'vid-window-inactive']">
                             <div @click="toggleWatch()" class="vid-exit">X</div>
                             <div class="vid-container">
                                 <video controls v-bind:muted="!watch">
-                                    <source :src="items[2].finalFilm + '#t=0'" type="video/mp4" />
+                                    <source :src="filmReel[1].finalFilm + '#t=0'" type="video/mp4" />
                                 </video>
                             </div>
                         </div>

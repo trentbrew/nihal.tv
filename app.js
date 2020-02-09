@@ -19,6 +19,7 @@ new Vue({
     el: "#app",
     firestore() {
         return {
+            filmReel: firebase.firestore().collection("filmReel"),
             items: firebase.firestore().collection("portfolioItems")
         }
     },
@@ -303,6 +304,12 @@ new Vue({
             emailjs.sendForm('gmail', 'template_zlljjLwb', e.target, 'user_kTZviK8cM7UnEbWOUl1bX')
               .then((result) => {
                   console.log('SUCCESS!', result.status, result.text);
+
+                  e.target.querySelector("input[type='submit']").style.borderColor = "#66BB6A";
+                  e.target.querySelector("input[type='submit']").style.color = "#66BB6A";
+                  e.target.querySelector("input[type='submit']").style.background = "transparent !important";
+                  e.target.querySelector("input[type='submit']").style.pointerEvents = "none";
+                  e.target.querySelector("input[type='submit']").value = "✓ Message sent";
                   
               }, (error) => {
                   console.log('FAILED...', error);

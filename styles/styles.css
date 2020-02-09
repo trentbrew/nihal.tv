@@ -76,13 +76,13 @@ button:hover {
 }
 
 video {
-  width: 100%;
+  width: 130%;
   height: 100vh !important;
   background-attachment: fixed;
   background-position: center;
   background-size: contain;
-  -o-object-fit: NONE;
-     object-fit: NONE;
+  -o-object-fit: cover;
+     object-fit: cover;
   -webkit-transition: 400ms;
   transition: 400ms;
 }
@@ -697,6 +697,7 @@ strong {
   -webkit-transition: 200ms;
   transition: 200ms;
   text-align: center;
+  z-index: 999 !important;
   cursor: pointer;
 }
 
