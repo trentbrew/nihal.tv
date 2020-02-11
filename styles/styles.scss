@@ -16,6 +16,8 @@ body {
     background: black;
     color: white;
 
+
+
     p {
         font-size: 24px;
     }
@@ -154,7 +156,81 @@ video {
 
 .blur {
     filter: blur(30px);
+    //pointer-events: none;
+    z-index: -1;
 }
+
+.image-big {
+    height: 80vh;
+    width: auto;
+    position: fixed;
+    margin: auto;
+    left: 0px;
+    right: 0px;
+    transition: 400ms;
+    cursor: zoom-out;
+}
+
+.photo-veil {
+    width: 100%;
+    height: 100vh;
+    background: $colorDark;
+    position: fixed;
+    z-index: 999 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 400ms;
+    overflow: hidden;
+}
+
+.photo-veil-active {
+    opacity: 1;
+    pointer-events: all;
+    background: $colorDark !important;
+    z-index:999 !important;
+    transition: 400ms;
+}
+
+.photo-veil-inactive {
+    opacity: 0;
+    pointer-events: none;
+    transition: 400ms;
+}
+
+
+.grid-container {
+    //background: blue;
+    //position: absolute;
+    margin: auto;
+    left: 0px;
+    right: 0px;
+    width: 65%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 24px;
+    padding-top: 120px;
+    padding-bottom: 60px;
+
+    .photo {
+        background: black;
+        width: 100% !important;
+        height: 350px;
+        border-radius: 3px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        cursor: zoom-in;
+        transition: 300ms;
+        object-fit: cover;
+
+        &:hover {
+            //background-size: 90%;
+            transform: scale(0.95);
+        }
+    }
+}
+
 
 .more-info {
     //background: red;
@@ -381,6 +457,10 @@ video {
     }
 }
 
+.nav-photo {
+    background: linear-gradient(black, transparent);
+}
+
 .navbar {
     position: fixed;
     z-index: 6;
@@ -394,10 +474,15 @@ video {
     .nav-inner {
         padding: 36px 0px 0px 60px;
 
+        a {
+            text-decoration: none !important;
+        }
+
         .nav-left {
             display: inline-flex;
             padding: 0px;
             margin: 0px;
+            
 
             li {
                 margin: 0px 36px 0px 0px;
@@ -443,6 +528,7 @@ video {
                 background-size: contain;
                 background-repeat: no-repeat;
                 filter: invert(1);
+                list-style: none !important;
             }
 
             .imdb {
@@ -899,6 +985,19 @@ strong {
         }
     }
 
+    .photo {
+        height: 200px !important;
+    }
+
+    .image-big {
+        height: 80vh !important;
+        width: auto !important;
+    }
+
+}
+
+.photo-foot {
+    padding: 6px 0px 6px 0px !important;
 }
 
 //---------- mobile ----------
@@ -1081,6 +1180,8 @@ strong {
 
     .navbar {
 
+        background: linear-gradient(black, transparent) ;
+
         .nav-left {
             //background: red !important;
         }
@@ -1111,5 +1212,24 @@ strong {
         height: 35% !important;
         width: 100% !important;
         object-fit: contain;
+    }
+
+    .grid-container {
+        margin: 0px !important;
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        grid-gap: 24px;
+        padding-top: 90px !important;
+        padding-bottom: 48px !important;
+        border-radius: 0px !important;
+        
+        .photo {
+            width: 100% !important;
+            margin-top: 12px !important;
+            margin-left:auto !important;
+            margin-right: auto !important;
+            height: auto !important;
+            pointer-events: none;
+        }
     }
 }

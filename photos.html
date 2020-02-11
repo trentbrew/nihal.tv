@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Photos</title>
+        <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
+        <link rel="icon" type="image/svg" href="res/videocam-24px.svg">
+        <link rel="stylesheet" href="styles/styles.css">
+        <!--fullpage-->
+        <link rel="stylesheet" href="fullpage/fullpage.css">
+        <!--fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri|Nunito|Roboto+Condensed|Yantramanav&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container" id="app">
+                <div class="navbar nav-photo" v-bind:class="[ watch ? 'invisible' : 'visible' ]">
+
+                    
+                        <div class="nav-inner">
+                            <ul style="list-style: none !important" class="nav-left">
+                                <a href="index.html"><li>Film</li></a>
+                                <li class="active">Photo</li>
+                                <a href="index.html"><li>Contact</li></a>
+                            </ul>
+            
+                            <ul style="list-style: none !important" class="nav-right">
+                                <li><a href="https://www.imdb.com/name/nm7577022/?ref_=nv_sr_srsg_0" target="_blank"><div class="social-link imdb"></div></a></li>
+                                <li><a href="https://vimeo.com/nihaldantluri" target="_blank"><div class="social-link vimeo"></div></a></li>
+                                <li><a href="https://www.instagram.com/nihal_dantluri/" target="_blank"><div class="social-link instagram"></div></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="photo-veil" v-bind:class="[ viewOpen ? 'photo-veil-active' : 'photo-veil-inactive' ]">
+                        <img @click="toggleView" class="image-big" :src="viewing"></img>
+                    </div>
+            
+                    <div class="grid-container">
+                            <img class="photo" @click="toggleView" v-for="(p, index) in photos" :src="p.src"></img>
+                        </div>
+
+
+                        <div class="foot photo-foot" style="position:relative; background:#212225"><p>Coded with <span class="love">♡</span> by <a href="https://tbrew1023.github.io/portfolio-v2" target="_blank">Trent Brew</a></p></div>
+        </div>
+
+        <!-- Vue -->   
+        <script src="https://unpkg.com/vue"></script>
+        <!-- firebase -->
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
+        <!-- firestore -->
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-firestore.js"></script>
+        <!-- vue-firestore -->   
+        <script src="https://unpkg.com/vue-firestore"></script>
+        <!-- storage -->
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-storage.js"></script>
+        <!-- emailjs -->
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
+        </script>
+        <script type="text/javascript">(function(){emailjs.init("user_kTZviK8cM7UnEbWOUl1bX");})();</script>
+        <!-- fullpage-->
+        <script src="fullpage/fullpage.js"></script>
+        <!-- app -->
+        <script src="app.js"></script>
+    </body>
+</html>

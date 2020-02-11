@@ -33,7 +33,7 @@
                 <div class="nav-inner">
                     <ul class="nav-left">
                         <li @click="{ $refs.fullpage.api.moveTo(1) }" v-bind:class="[!currentTab ? 'active' : '']">Film</li>
-                        <li @click="{ }">Photo</li>
+                        <a href="photos.html"><li @click="">Photo</li></a>
                         <li @click="{ $refs.fullpage.api.moveTo(items.length + 2) }" v-bind:class="[currentTab ? 'active' : '']" class="contact-link">Contact</li>
                     </ul>
 

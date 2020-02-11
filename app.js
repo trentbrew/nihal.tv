@@ -19,6 +19,7 @@ new Vue({
     el: "#app",
     firestore() {
         return {
+            photos: firebase.firestore().collection("photos"),
             filmReel: firebase.firestore().collection("filmReel"),
             items: firebase.firestore().collection("portfolioItems")
         }
@@ -32,6 +33,8 @@ new Vue({
                 subject_html: '',
                 message_html: ''
             },
+            viewing: "",
+            viewOpen: false,
             currentTab: 1,
             infoActive: false,
             infoAmount: 'More info',
@@ -72,16 +75,12 @@ new Vue({
     },
     mounted: function() {
 
-        console.log('email sent?: ' + this.emailSent);
-
-        console.log(this)
-
         //----- Loading component and initializing fullpage -----
 
         var parentObj = this
         //console.log(this.items.length);
         setTimeout(function() {
-            console.log("item count: " + parentObj.items.length);
+           // console.log("item count: " + parentObj.items.length);
             parentObj.componentsReady();
             parentObj.removeLoader();
         }, 5000)
@@ -99,7 +98,7 @@ new Vue({
             });*/
         },
         add() {
-            console.log('clicked')
+            //console.log('clicked')
             this.$firestore.items.add(this.item).then(()=>{
                 this.item.title = "",
                 this.item.genre = "",
@@ -120,7 +119,7 @@ new Vue({
             document.location.reload();
         },
         remove(e) {
-            console.log(e.screenGrabs);
+            //console.log(e.screenGrabs);
 
             //deleting screenGrab directory in storage
 
@@ -156,7 +155,7 @@ new Vue({
             //console.log("pushed new screengrab")
         },
         handleUpload(e) {
-            console.log("...handling screengrab upload for " + this.item.title);
+            //console.log("...handling screengrab upload for " + this.item.title);
 
             var parentObj = this;
 
@@ -185,11 +184,11 @@ new Vue({
 
                     task.snapshot.ref.getDownloadURL().then(
                         function(downloadURL) {
-                            console.log('File available at: ' + downloadURL)
+                            //console.log('File available at: ' + downloadURL)
                             parentObj.item.screenGrabs.push(
                                 downloadURL + ""
                             );
-                            console.log('screenGrabs' + parentObj.item.screenGrabs);
+                            //console.log('screenGrabs' + parentObj.item.screenGrabs);
                         }
                     )
 
@@ -200,7 +199,7 @@ new Vue({
 
         },
         handleFilmUpload(e) {
-            console.log("...handling film upload for " + this.item.title);
+            //console.log("...handling film upload for " + this.item.title);
 
             var parentObj = this;
 
@@ -233,17 +232,17 @@ new Vue({
 
                     task.snapshot.ref.getDownloadURL().then(
                         function(downloadURL) {
-                            console.log('File available at: ' + downloadURL)
+                            //console.log('File available at: ' + downloadURL)
                             parentObj.item.finalFilm = downloadURL + ""
                         }
                     )
 
-                    console.log("video: " + parentObj.item.screenGrabs);
+                    //console.log("video: " + parentObj.item.screenGrabs);
                 }
             )
         },
         removeLoader() {
-            console.log("goodbye loader");
+            //console.log("goodbye loader");
             this.displayLoader = false;
         },
         handleLeave(direction) {
@@ -256,7 +255,7 @@ new Vue({
 
             //console.log("direction: " + direction);
 
-            console.log('begin animation');
+            //console.log('begin animation');
         },
         handleLoad(destination, direction) {
             //console.log("Emitted 'after load' event");
@@ -292,6 +291,10 @@ new Vue({
                 this.options.navigation = true;
             }  
             //console.log(this.options);
+        },
+        toggleView(e) {
+            this.viewing = e.target.src;
+            this.viewOpen = !this.viewOpen;
         },
         handleSubmit() {
             this.emailSent = true;
