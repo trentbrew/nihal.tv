@@ -194,7 +194,7 @@ video {
   margin: auto;
   left: 0px;
   right: 0px;
-  width: 65%;
+  width: 60%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
