@@ -19,6 +19,7 @@ new Vue({
     el: "#app",
     firestore() {
         return {
+            bio: firebase.firestore().collection("bio"),
             photos: firebase.firestore().collection("photos"),
             filmReel: firebase.firestore().collection("filmReel"),
             items: firebase.firestore().collection("portfolioItems")

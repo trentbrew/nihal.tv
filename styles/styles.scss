@@ -828,12 +828,17 @@ strong {
 
 .bio-content {
     display:block;
+    width: 36%;
 }
 
 .portrait-img {
     background: gray;
     width: 150px;
     height: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 36px;
 }
 
 .bio {

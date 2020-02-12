@@ -108,10 +108,10 @@
                     <div class="section contact-footer">
                         <div class="contact-section section-left">
                             <div class="bio-content">
-                                <div class="portrait-img"></div>
+                                <div class="portrait-img" v-bind:style="{ backgroundImage: 'url(' + bio[0].photo + ')' }"></div>
                                 <h1>NIHAL DANTLURI</h1>
                                 <p class="genre">Director of Photography</p>
-                                <p class="summary bio">Nihal Dantluri resides in Chicago, Illinois, and works in the film industry locally in the Camera Department. He dreams of becoming a Cinematographer due to how he greatly enjoys the visual storytelling aspect of filmmaking. He also enjoys working other positions in the Camera Department, and the challenges each job presents.</p>
+                                <p class="summary bio">{{ bio[0].text }}</p>
                             </div>
                             <form class="contact-form" @submit.prevent="sendEmail">
                                 <label>Name</label>
