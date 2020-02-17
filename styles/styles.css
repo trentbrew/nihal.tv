@@ -136,8 +136,8 @@ video {
 }
 
 .blur {
-  -webkit-filter: blur(30px);
-          filter: blur(30px);
+  -webkit-filter: brightness(0.3);
+          filter: brightness(0.3);
   z-index: -1;
 }
 

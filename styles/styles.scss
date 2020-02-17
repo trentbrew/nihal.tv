@@ -156,7 +156,7 @@ video {
 }
 
 .blur {
-    filter: blur(30px);
+    filter: brightness(0.3);
     //pointer-events: none;
     z-index: -1;
 }
