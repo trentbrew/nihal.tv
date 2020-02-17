@@ -887,6 +887,50 @@ strong {
   width: 36%;
 }
 
+.contact-icon {
+  height: 40px;
+  width: 40px;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  margin-right: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+h4 {
+  margin: 0px;
+  padding: 24px 36px 24px 24px;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  border-radius: 6px;
+  font-size: 22px;
+  font-weight: normal;
+}
+
+h4:hover {
+  background: #212225;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.icon-phone {
+  background-image: url("../res/icons/phone-24px.svg");
+}
+
+.icon-email {
+  background-image: url("../res/icons/email-24px.svg");
+}
+
+.icon-cv {
+  background-image: url("../res/icons/description-24px.svg");
+}
+
 .portrait-img {
   background: gray;
   width: 150px;
@@ -927,10 +971,6 @@ strong {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.contact-form {
-  width: 18%;
 }
 
 .contact-form input[type="text"], .contact-form input[type="email"] {
@@ -1080,7 +1120,7 @@ strong {
   }
   .bio-content {
     margin-left: 24px !important;
-    padding-top: 12px !important;
+    padding-top: 48px !important;
     width: 100% !important;
   }
   .bio {
@@ -1090,6 +1130,10 @@ strong {
   .contact-form {
     padding: 12px 24px 12px 24px;
     width: 72%;
+  }
+  .contact-form h4 {
+    font-size: 14px !important;
+    padding: 12px;
   }
   .section-left {
     display: block;
@@ -1114,8 +1158,8 @@ strong {
     height: 42px !important;
   }
   .section-left .portrait-img {
-    width: 64px;
-    height: 64px;
+    width: 120px;
+    height: 120px;
   }
   .section-left h1 {
     font-size: 28px !important;
@@ -1123,7 +1167,8 @@ strong {
     margin-bottom: 12px !important;
   }
   .section-left p {
-    font-size: 12px !important;
+    font-size: 14px !important;
+    width: 75% !important;
   }
   .layer-left-active {
     -webkit-transition: 1.5s;

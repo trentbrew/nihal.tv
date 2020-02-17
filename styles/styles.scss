@@ -565,6 +565,7 @@ video {
 
 //----- contact footer -----
 
+
 .contact-footer {
     background: #bdbdbd;
 }
@@ -832,6 +833,48 @@ strong {
     width: 36%;
 }
 
+.contact-icon {
+    //background:red;
+    height: 40px;
+    width: 40px;
+    filter:invert(1);
+    margin-right: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(0.8);
+}
+
+h4 {
+    margin: 0px;
+    padding: 24px 36px 24px 24px;
+    transition: 200ms;
+    border-radius: 6px;
+    font-size: 22px;
+    font-weight: normal;
+
+    &:hover {
+        background: $colorMain;
+    }
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.icon-phone {
+    background-image: url('../res/icons/phone-24px.svg');
+}
+
+.icon-email {
+    background-image: url('../res/icons/email-24px.svg');
+}
+
+.icon-cv {
+    background-image: url('../res/icons/description-24px.svg');
+}
+
 .portrait-img {
     background: gray;
     width: 150px;
@@ -870,7 +913,7 @@ strong {
 
 .contact-form {
     //background: red;
-    width: 18%;
+    //width: 18%;
     //margin-left: 120px;
 
     input[type="text"], input[type="email"] {
@@ -1024,18 +1067,24 @@ strong {
 
     .bio-content {
         margin-left: 24px !important;
-        padding-top: 12px !important;
+        padding-top: 48px !important;
         width: 100% !important;
     }
 
     .bio {
         margin-bottom: 0px !important;
         width: 83% !important;
+        //font-size: 18px;
     }
 
     .contact-form {
         padding: 12px 24px 12px 24px;
         width: 72%;
+
+        h4 {
+            font-size: 14px !important;
+            padding: 12px;
+        }
     }
 
     .section-left {
@@ -1065,8 +1114,8 @@ strong {
         }
 
         .portrait-img {
-            width: 64px;
-            height: 64px;
+            width: 120px;
+            height: 120px;
         }
 
         h1 {
@@ -1076,7 +1125,8 @@ strong {
         }
 
         p {
-            font-size: 12px !important;
+            font-size: 14px !important;
+            width: 75% !important;
         }
     }
 

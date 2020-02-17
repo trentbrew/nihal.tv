@@ -114,55 +114,15 @@
                                 <p class="summary bio">{{ bio[0].text }}</p>
                             </div>
                             <form class="contact-form" @submit.prevent="sendEmail">
-                                <label>Name</label>
-                                <br>
-                                <input @click="emailSent = false" type="text" name="from_name" v-model="message.from_name">
-                                <br>
-                                <label>Email</label>
-                                <br>
-                                <input @click="emailSent = false" type="email" name="user_email" v-model="message.user_email">
-                                <br>
-                                <label>Subject</label>
-                                <br>
-                                <input @click="emailSent = false" type="text" name="subject_html" v-model="message.subject_html">
-                                <br>
-                                <label>Message</label>
-                                <br>
-                                <textarea @click="emailSent = false" name="message_html" v-model="message.message_html"></textarea>
-                                <br>
-                                <input type="submit" v-bind:value="[ emailSent ? '✓ Message sent' : 'Send' ]" v-bind:class="[ emailSent ? 'email-sent' : 'email-submit' ]">
+                                <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=nihal@nihal.tv" target="_blank"><h4 style="display: inline-flex; line-height: 40px"><div class="contact-icon icon-email"></div>nihal@nihal.tv</h4></a><br>
+                                <a href="tel:6303605706"><h4 style="display: inline-flex; line-height: 40px"><div class="contact-icon icon-phone"></div>630.360.5706</h4></a><br>
+                                <h4 style="display: inline-flex; line-height: 40px"><div class="contact-icon icon-cv"></div><a href="#">CV available upon request</a></h4>
                             </form>
                         </div>
                         <div class="foot"><p>Coded with <span class="love">♡</span> by <a href="https://tbrew1023.github.io/ux-portfolio" target="_blank">Trent Brew</a></p></div>
                     </div>
                 </full-page>
             </div>
-
-            <!--div class="section-right">
-
-                <ul class="list-group">
-                    <li class="list-group-item project-item" v-for="(i, index) in items">
-                        <div class="vid-section">
-                            <video controls autoplay muted width="600">
-                                <source :src="i.finalFilm" type="video/mp4" />
-                            </video>
-                            <div class="vid-text">
-                                <h1>{{i.title}}</h1>
-                                <strong><p style="opacity:0.5">{{i.genre}}</p></strong>
-                                <p style="width:512px">{{i.summary}}</p>
-                            </div>
-                        </div>
-                        <br>
-                        <ul style="display: inline-flex; list-style: none; padding: 0px" class="images">
-                            <li v-for="(p, index) in i.screenGrabs">
-                                <img style="width: 240px" :src="p" />
-                            </li>
-                        </ul>
-                        <br>
-                        <p class="credit" style="display: inline-flex" v-for="(c, index) in i.credits"><span>{{c.role}}</span>&nbsp;<strong>{{c.name}}</strong>&nbsp;</p>
-                    </li>
-                </ul>
-            </div-->
         
         </div>
 
