@@ -7,7 +7,7 @@ var config = {
     storageBucket: "nihal-819a6.appspot.com",
     messagingSenderId: "489064704671"
 }
-    
+
 // Initialize Firebase.
 firebase.initializeApp(config);
 
@@ -55,7 +55,8 @@ new Vue({
                 navigationPosition: 'right',
                 parallax: true,
                 lazyLoading: false,
-                scrollingSpeed: 750
+                scrollingSpeed: 750,
+                anchors:[],
             },
             item: {
                 title: "",
@@ -79,7 +80,9 @@ new Vue({
         //----- Loading component and initializing fullpage -----
 
         var parentObj = this
-        //console.log(this.items.length);
+
+        //console.log(parentObj.options.anchors);
+
         setTimeout(function() {
            // console.log("item count: " + parentObj.items.length);
             parentObj.componentsReady();
@@ -88,6 +91,27 @@ new Vue({
     },
     methods: {
         componentsReady() {
+            //console.log(this.items.length);
+
+            for(let i = 0; i < this.items.length + 2; i++) {
+                this.options.anchors.push("");
+            }
+
+            console.log(this.options.anchors.length);
+
+            this.options.anchors[this.options.anchors.length - 1] = "contact"
+
+            /*this.options.anchors.push("home");
+
+            for(let i = 0; i < this.items.length; i++) {
+                console.log(this.items[i].title);
+                this.options.anchors.push(i);
+            }
+
+            this.options.anchors.push("contact");
+
+            console.log(this.options);*/
+
             this.$refs.fullpage.init()
             this.$refs.fullpage.build()
             console.log('fullpage initialized');
