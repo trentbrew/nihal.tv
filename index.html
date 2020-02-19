@@ -110,13 +110,13 @@
                             <div class="bio-content">
                                 <div class="portrait-img" v-bind:style="{ backgroundImage: 'url(' + bio[0].photo + ')' }"></div>
                                 <h1>NIHAL DANTLURI</h1>
-                                <p class="genre">Director of Photography</p>
+                                <p style="font-size:22px"><span class="genre">Director of Photography</span> Chicago, IL</p>
                                 <p class="summary bio">{{ bio[0].text }}</p>
                             </div>
                             <form class="contact-form" @submit.prevent="sendEmail">
-                                <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=nihal@nihal.tv" target="_blank"><h4 style="display: inline-flex; line-height: 40px"><div class="contact-icon icon-email"></div>nihal@nihal.tv</h4></a><br>
+                                <a href="mailto:nihal@nihal.tv" target="_blank"><h4 style="display: inline-flex; line-height: 40px"><div class="contact-icon icon-email"></div>nihal@nihal.tv</h4></a><br>
                                 <a href="tel:6303605706"><h4 style="display: inline-flex; line-height: 40px"><div class="contact-icon icon-phone"></div>630.360.5706</h4></a><br>
-                                <h4 style="display: inline-flex; line-height: 40px"><div class="contact-icon icon-cv"></div><a href="#">CV available upon request</a></h4>
+                                <h4 class="disabled" style="display: inline-flex; line-height: 40px"><div class="contact-icon icon-cv"></div><a href="#">CV available upon request</a></h4>
                             </form>
                         </div>
                         <div class="foot"><p>Coded with <span class="love">♡</span> by <a href="https://tbrew1023.github.io/ux-portfolio" target="_blank">Trent Brew</a></p></div>

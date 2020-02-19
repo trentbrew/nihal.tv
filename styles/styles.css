@@ -914,6 +914,14 @@ h4:hover {
   background: #212225;
 }
 
+.disabled {
+  cursor: default !important;
+}
+
+.disabled:hover {
+  background: transparent !important;
+}
+
 a {
   color: white;
   text-decoration: none;
