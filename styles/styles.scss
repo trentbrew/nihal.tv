@@ -859,7 +859,9 @@ h4 {
 }
 
 .disabled {
-    cursor: default !important;
+    a {
+        cursor: default !important;
+    }
 
     &:hover {
         background: transparent !important;
