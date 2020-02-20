@@ -270,7 +270,7 @@ new Vue({
             //console.log("goodbye loader");
             this.displayLoader = false;
         },
-        handleLeave(direction) {
+        handleLeave(destination,direction) {
             //console.log('left');
             this.displayVeil = true;
             this.infoActive = false;
@@ -278,7 +278,9 @@ new Vue({
             this.watch = false;
             //console.log('enter?: ' + this.enter);
 
-            //console.log("direction: " + direction);
+            console.log("going to: " + (direction.index + 1));
+
+            this.currentTab = direction.isLast;
 
             //console.log('begin animation');
         },

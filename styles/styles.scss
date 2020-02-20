@@ -156,7 +156,7 @@ video {
 }
 
 .blur {
-    filter: brightness(0.3);
+    filter: grayscale(0.5) brightness(0.4);
     //pointer-events: none;
     z-index: -1;
 }
@@ -830,7 +830,13 @@ strong {
 
 .bio-content {
     display:block;
-    width: 36%;
+    width: 60%;
+}
+
+.bio-content-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contact-icon {
@@ -898,7 +904,7 @@ a {
 .bio {
     font-size: 18px;
     font-weight: normal;
-    width: 75%;
+    width: 60%;
 }
 
 .contact-footer {
@@ -925,6 +931,10 @@ a {
     //background: red;
     //width: 18%;
     //margin-left: 120px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     input[type="text"], input[type="email"] {
         width: 100%;
@@ -1063,7 +1073,7 @@ a {
 
 @media only screen and (max-width: 768px) {
     img {
-        width: 112px !important;
+        width: 64px !important;
     }
 
     .vid-window-active {
@@ -1084,24 +1094,39 @@ a {
     .bio {
         margin-bottom: 0px !important;
         width: 83% !important;
-        //font-size: 18px;
+
+    }
+
+    .contact-section {
+        //display: flex;
+
+    }
+
+    .bio-content-inner {
+        display: block;
+        
     }
 
     .contact-form {
-        padding: 12px 24px 12px 24px;
-        width: 72%;
+        padding: 12px 24px 12px 18px;
+        width: 300px;
 
         h4 {
-            font-size: 14px !important;
-            padding: 12px;
+            font-size: 12px !important;
+            padding: 0px 12px 0px 0px;
+        }
+
+        .contact-icon {
+            transform: scale(0.5);
+            margin-right: 12px;
         }
     }
 
     .section-left {
-        display: block;
+        display: flex;
         margin-left: 0px !important;
-        padding-top: 80px;
-        margin-bottom: 170px !important;
+        //padding-top: 80px;
+        //margin-bottom: 170px !important;
 
         label {
             font-size: 12px;
@@ -1135,8 +1160,8 @@ a {
         }
 
         p {
-            font-size: 14px !important;
-            width: 75% !important;
+            font-size: 12px !important;
+            width: 224px !important;
         }
     }
 
@@ -1203,7 +1228,7 @@ a {
     
         .summary {
             font-size: 14px;
-            width: 80%;
+            width: 300px;
         }
     }
 
@@ -1228,8 +1253,13 @@ a {
     }
 
     .info {
-        padding-right: 24px;
+        padding-right: 32px;
         font-size: 14px;
+
+        span {
+            line-height: 24px;
+            //background: red;
+        }
     }
 
     #fp-nav {
@@ -1297,5 +1327,11 @@ a {
             height: auto !important;
             pointer-events: none;
         }
+    }
+
+    .vid-exit {
+        top: 0px;
+        right: 0px;
+        margin: 24px;
     }
 }

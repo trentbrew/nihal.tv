@@ -90,7 +90,7 @@
                                     <button class="watch" @click="toggleWatch()">Watch film</button>
                                 </div>
                             </div>
-                            <button class="info" @click="toggleInfo()">{{ infoAmount }}<div v-bind:class="[infoActive ? 'arrow-down' : 'arrow' ]"></div></button>
+                            <button class="info" @click="toggleInfo()"><span>{{ infoAmount }}</span><div v-bind:class="[infoActive ? 'arrow-down' : 'arrow' ]"></div></button>
                         </div>
                         <div class="more-info" v-bind:class="[infoActive ? 'more-info-active' : 'more-info-inactive' ]">
                             <ul style="display: inline-flex; list-style: none; padding: 0px" class="images" :id="'images' + index">
@@ -107,17 +107,19 @@
                     <!-- static contact footer -->
                     <div class="section contact-footer">
                         <div class="contact-section section-left">
-                            <div class="bio-content">
-                                <div class="portrait-img" v-bind:style="{ backgroundImage: 'url(' + bio[0].photo + ')' }"></div>
-                                <h1>NIHAL DANTLURI</h1>
-                                <p style="font-size:22px"><span class="genre">Director of Photography</span> Chicago, IL</p>
-                                <p class="summary bio">{{ bio[0].text }}</p>
+                            <div class="bio-content-inner">
+                                <div class="bio-content">
+                                    <div class="portrait-img" v-bind:style="{ backgroundImage: 'url(' + bio[0].photo + ')' }"></div>
+                                    <h1>NIHAL DANTLURI</h1>
+                                    <p class="genre" style="font-size:22px"><span>Director of Photography</span><br><span style="color:white"><strong>Chicago, IL</strong></span></p>
+                                    <p class="summary bio">{{ bio[0].text }}</p>
+                                </div>
+                                <form class="contact-form" @submit.prevent="sendEmail">
+                                    <a href="mailto:nihal@nihal.tv" target="_blank"><h4 style="display: inline-flex; line-height: 40px"><div class="contact-icon icon-email"></div>nihal@nihal.tv</h4></a><br>
+                                    <a href="tel:6303605706"><h4 style="display: inline-flex; line-height: 40px"><div class="contact-icon icon-phone"></div>630.360.5706</h4></a><br>
+                                    <h4 class="disabled" style="display: inline-flex; line-height: 40px"><div class="contact-icon icon-cv"></div><a href="#">CV available upon request</a></h4>
+                                </form>  
                             </div>
-                            <form class="contact-form" @submit.prevent="sendEmail">
-                                <a href="mailto:nihal@nihal.tv" target="_blank"><h4 style="display: inline-flex; line-height: 40px"><div class="contact-icon icon-email"></div>nihal@nihal.tv</h4></a><br>
-                                <a href="tel:6303605706"><h4 style="display: inline-flex; line-height: 40px"><div class="contact-icon icon-phone"></div>630.360.5706</h4></a><br>
-                                <h4 class="disabled" style="display: inline-flex; line-height: 40px"><div class="contact-icon icon-cv"></div><a href="#">CV available upon request</a></h4>
-                            </form>
                         </div>
                         <div class="foot"><p>Coded with <span class="love">♡</span> by <a href="https://tbrew1023.github.io/ux-portfolio" target="_blank">Trent Brew</a></p></div>
                     </div>
