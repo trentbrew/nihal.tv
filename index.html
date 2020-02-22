@@ -23,13 +23,17 @@
         
         <div class = "container" id="app">
 
+            <div class="data" style="display: none">
+                <span>{{ items }}</span>
+                <span>{{ bio }}</span>
+            </div>
+
             <div v-bind:class="[displayLoader ? 'loader-active' : 'loader-inactive']">
                 <div class="loader">Loading...</div>
             </div>
 
             <div class="navbar" v-bind:class="[ watch ? 'invisible' : 'visible' ]">
 
-                    
                 <div class="nav-inner">
                     <ul class="nav-left">
                         <li @click="{ $refs.fullpage.api.moveTo(1) }" v-bind:class="[!currentTab ? 'active' : '']">Work</li>
