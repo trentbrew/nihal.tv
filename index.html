@@ -54,7 +54,7 @@
                 <full-page ref="fullpage" :options="options" id="fullpage" :skip-init="true">
                     <!-- static hero section -->
                     <div class="section hero-section">
-                        <video loop data-autoplay muted>
+                        <video loop data-autoplay muted data-keepplaying>
                             <source :src="filmReel[0].finalFilm + '#t=0'" type="video/mp4" />
                         </video>
                         <div v-bind:class="[watch ? 'vid-window-active' : 'vid-window-inactive']">
@@ -76,7 +76,7 @@
                     </div>
                     <!-- dynamic project sections -->
                     <div class="section" v-for="(i, index) in items">
-                        <video loop data-autoplay muted v-bind:class="[ infoActive ? 'blur' : '' ]">
+                        <video loop data-autoplay data-keepplaying muted v-bind:class="[ infoActive ? 'blur' : '' ]">
                             <source :src="i.finalFilm + '#t=88'" type="video/mp4" />
                         </video>
                         <div v-bind:class="[watch ? 'vid-window-active' : 'vid-window-inactive']">
