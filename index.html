@@ -115,7 +115,7 @@
                                 <div class="bio-content">
                                     <div class="portrait-img" v-bind:style="{ backgroundImage: 'url(' + bio[0].photo + ')' }"></div>
                                     <h1>NIHAL DANTLURI</h1>
-                                    <p class="genre" style="font-size:22px"><span>Director of Photography</span><br><span style="color:white"><strong>Chicago, IL</strong></span></p>
+                                    <p style="font-size:22px; color: white"><span class="genre">Director of Photography</span><span>&emsp;|&emsp;</span><span class="genre"><strong>Chicago, IL</strong></span></p>
                                     <p class="summary bio">{{ bio[0].text }}</p>
                                 </div>
                                 <form class="contact-form" @submit.prevent="sendEmail">
