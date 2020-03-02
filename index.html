@@ -76,9 +76,15 @@
                     </div>
                     <!-- dynamic project sections -->
                     <div class="section" v-for="(i, index) in items">
-                        <video loop data-autoplay data-keepplaying muted v-bind:class="[ infoActive ? 'blur' : '' ]">
-                            <source :src="i.finalFilm + '#t=' + i.startTime" type="video/mp4" />
-                        </video>
+                        <div class="backdrop-container">
+                            <video v-if="i.finalFilm" loop data-autoplay data-keepplaying muted v-bind:class="[ infoActive ? 'blur' : '' ]">
+                                <source :src="i.finalFilm + '#t=' + i.startTime" type="video/mp4" />
+                            </video>
+                            <div v-if="!i.finalFilm" class="slideshow">
+                                <div class="background-screengrab slide" v-for="(s, index) in i.screenGrabs" v-if="index != 0" v-bind:style="{ backgroundImage: 'url(' + s + ')' }"></div>
+                            </div>
+                        </div>
+                        
                         <div v-bind:class="[watch ? 'vid-window-active' : 'vid-window-inactive']">
                             <div @click="toggleWatch()" class="vid-exit">X</div>
                             <video controls v-bind:muted="!watch">
@@ -91,7 +97,8 @@
                                     <h1>{{i.title}}</h1>
                                     <p class="genre">{{i.genre}}</p>
                                     <p class="summary">{{i.summary}}</p>
-                                    <button class="watch" @click="toggleWatch()">Watch film</button>
+                                    <button v-if="i.finalFilm" class="watch" @click="toggleWatch()">Watch Film</button>
+                                    <button v-if="!i.finalFilm" class="watch watch-inactive" @click="">Film Unavailable</button>
                                 </div>
                             </div>
                             <button class="info" @click="toggleInfo()"><span>{{ infoAmount }}</span><div v-bind:class="[infoActive ? 'arrow-down' : 'arrow' ]"></div></button>

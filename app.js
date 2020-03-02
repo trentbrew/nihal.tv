@@ -57,6 +57,7 @@ new Vue({
                 lazyLoading: false,
                 scrollingSpeed: 750,
                 anchors:[],
+                controlArrows: false,
             },
             item: {
                 title: "",
@@ -115,6 +116,8 @@ new Vue({
             this.$refs.fullpage.init()
             this.$refs.fullpage.build()
             console.log('fullpage initialized');
+
+            this.runSlideshow();
             /*ui.start('#firebaseui-auth-container', {
                 signInOptions: [
                   firebase.auth.EmailAuthProvider.PROVIDER_ID
@@ -295,10 +298,19 @@ new Vue({
 
             this.currentTab = direction.isLast;
         },
+        runSlideshow() {
+            var parentObj = this;
+
+            setTimeout(function() {
+                this.fullpage_api.moveSlideRight();
+                console.log("next slide");
+                parentObj.runSlideshow();
+            }, 4500);
+        },
         toggleInfo() {
             if(this.infoActive) {
                 this.infoActive = false
-                this.infoAmount = 'More info'
+                this.infoAmount = 'More Info'
             }
             else {
                 this.infoActive = true
@@ -310,11 +322,11 @@ new Vue({
             this.watch = !this.watch;
             //console.log('watch?: ' + this.watch);
             if(this.watch) {
-                this.vidTime = 0;
+                //this.vidTime = 0;
                 this.options.navigation = false;
             }
             else {
-                this.vidTime = 85;
+                //this.vidTime = 85;
                 this.options.navigation = true;
             }  
             //console.log(this.options);
