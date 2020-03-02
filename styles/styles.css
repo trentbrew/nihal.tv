@@ -790,10 +790,6 @@ strong {
   font-weight: normal;
 }
 
-.slideshow {
-  background: blue;
-}
-
 .slideshow .background-screengrab {
   background-position: center;
   background-size: cover;
