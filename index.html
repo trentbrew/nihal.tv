@@ -77,7 +77,7 @@
                     <!-- dynamic project sections -->
                     <div class="section" v-for="(i, index) in items">
                         <video loop data-autoplay data-keepplaying muted v-bind:class="[ infoActive ? 'blur' : '' ]">
-                            <source :src="i.finalFilm + '#t=88'" type="video/mp4" />
+                            <source :src="i.finalFilm + '#t=' + i.startTime" type="video/mp4" />
                         </video>
                         <div v-bind:class="[watch ? 'vid-window-active' : 'vid-window-inactive']">
                             <div @click="toggleWatch()" class="vid-exit">X</div>

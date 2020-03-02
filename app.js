@@ -38,7 +38,7 @@ new Vue({
             viewOpen: false,
             currentTab: 1,
             infoActive: false,
-            infoAmount: 'More info',
+            infoAmount: 'More Info',
             enter: false,
             exit: false,
             displayLoader: true,
@@ -302,7 +302,7 @@ new Vue({
             }
             else {
                 this.infoActive = true
-                this.infoAmount = 'Less info'
+                this.infoAmount = 'Less Info'
             }
             //console.log("info active: " + this.infoActive);
         },
