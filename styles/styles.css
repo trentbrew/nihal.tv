@@ -111,7 +111,7 @@ video {
 .layer .layer-left-active {
   -webkit-transition: 300ms ease;
   transition: 300ms ease;
-  margin-bottom: 280px;
+  margin-bottom: 218px;
 }
 
 .layer h1 {
@@ -276,9 +276,17 @@ video {
   bottom: 0px;
 }
 
+.more-info-active .credits {
+  width: 160%;
+}
+
 .more-info-inactive {
   opacity: 0;
   bottom: -120px;
+}
+
+.more-info-inactive .credits {
+  width: 160%;
 }
 
 .info {
@@ -1132,10 +1140,13 @@ a {
     width: 180px !important;
   }
   .layer-left-active {
-    margin-bottom: 220px !important;
+    margin-bottom: 218px !important;
   }
   .credit {
     font-size: 16px !important;
+  }
+  .credits {
+    width: 90% !important;
   }
   .bio-content {
     width: 35%;

@@ -276,9 +276,13 @@ new Vue({
         handleLeave(destination,direction) {
             //console.log('left');
             this.displayVeil = true;
-            this.infoActive = false;
             this.enter = false;
             this.watch = false;
+            
+            if(this.infoActive) {
+                this.toggleInfo()
+            }
+
             //console.log('enter?: ' + this.enter);
 
             console.log("going to: " + (direction.index + 1));
