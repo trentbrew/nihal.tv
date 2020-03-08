@@ -977,6 +977,29 @@ a {
   background-image: url("../res/icons/description-24px.svg");
 }
 
+.icon-location {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  margin-left: 12px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../res/icons/location_on-24px.svg");
+}
+
+.contact-sub {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.contact-sub span {
+  font-size: 18px !important;
+}
+
 .portrait-img {
   background: gray;
   width: 150px;
@@ -991,6 +1014,7 @@ a {
   font-size: 18px;
   font-weight: normal;
   width: 60%;
+  margin-top: 0px;
 }
 
 .contact-footer {
