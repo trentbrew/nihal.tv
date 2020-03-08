@@ -1150,10 +1150,14 @@ a {
     width: 90% !important;
   }
   .bio-content {
-    width: 35%;
+    width: 55%;
   }
   .vid-window-active video {
     height: 75% !important;
+  }
+  .portrait-img {
+    width: 120px;
+    height: 120px;
   }
   .photo {
     height: 200px !important;
