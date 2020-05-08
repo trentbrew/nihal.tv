@@ -36,7 +36,7 @@
                     </div>
             
                     <div class="grid-container">
-                            <img class="photo" @click="toggleView" v-for="(p, index) in photos" :src="p.src"></img>
+                            <img class="photo" @click="toggleView" v-for="(p, index) in photos" :src="p.thumbSrc350" :alt="p.src"></img>
                         </div>
 
 

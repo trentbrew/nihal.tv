@@ -306,6 +306,12 @@ new Vue({
             var parentObj = this;
 
             setTimeout(function() {
+
+
+                /* ----------- TODO ----------- */
+
+
+                //fade to next slide
                 this.fullpage_api.moveSlideRight();
                 console.log("next slide");
                 parentObj.runSlideshow();
@@ -336,7 +342,7 @@ new Vue({
             //console.log(this.options);
         },
         toggleView(e) {
-            this.viewing = e.target.src;
+            this.viewing = e.target.alt;
             this.viewOpen = !this.viewOpen;
         },
         handleSubmit() {
