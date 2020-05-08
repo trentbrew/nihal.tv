@@ -167,7 +167,7 @@ video {
 }
 
 .blur {
-    filter: grayscale(0.5) brightness(0.4);
+    filter: blur(6px) brightness(0.4);
     //pointer-events: none;
     z-index: -1;
 }
@@ -1073,6 +1073,10 @@ a {
     }
 }
 
+.location-section {
+    display: flex;
+}
+
 //---------- tablet ----------
 
 @media only screen and (max-width: 1366px) {
@@ -1125,7 +1129,22 @@ a {
 
 //---------- mobile ----------
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
+
+    .location-section {
+        display: flex;
+        margin-top: 12px;
+        width: max-content;
+    }
+
+    .contact-sub {
+        display: block !important;
+
+        .icon-location {
+            margin: 0px 12px 0px 0px;
+        }
+    }
+
     img {
         width: 64px !important;
     }
