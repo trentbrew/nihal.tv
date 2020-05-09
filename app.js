@@ -313,6 +313,7 @@ new Vue({
 
                 //fade to next slide
                 this.fullpage_api.moveSlideRight();
+                //parentObj.handleNextSlide();
                 console.log("next slide");
                 parentObj.runSlideshow();
             }, 4500);

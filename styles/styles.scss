@@ -31,6 +31,58 @@ body {
     }
 }
 
+//----- section fade effect -----
+
+.fp-fullpage-wrapper {
+	//width: 100% !important;
+	//transform: none !important;
+}
+
+.fp-section {
+	//width: 100% !important;
+	//position: absolute;
+	//left: 0;
+	//top: 0;
+	//visibility: hidden;
+    opacity: 0;
+    transform: scale(0.95);
+
+	transition: all 1s ease-in-out;
+}
+
+.fp-section.active {
+    visibility: visible;
+    transform: scale(1);
+    opacity: 1;
+    //border: red solid 2px;
+}
+
+
+// ----- slide fade effect -----
+
+.fp-slidesContainer {
+	width: 100% !important;
+	transform: none !important;
+}
+
+.fp-slide {
+	//width: 100% !important;
+	//position: absolute;
+	//left: 0;
+	//top: 0;
+	visibility: hidden;
+    opacity: 0;
+	transition: all .7s ease-in-out;
+}
+
+.fp-slide.active {
+	visibility: visible;
+    opacity: 1;
+    //border: red solid 2px;
+}
+
+// ----- end of fade effect stuff -----
+
 .container {
     width: 100%;
     

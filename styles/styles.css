@@ -18,6 +18,39 @@ body h1 {
   transition: 300ms;
 }
 
+.fp-section {
+  opacity: 0;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.fp-section.active {
+  visibility: visible;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+.fp-slidesContainer {
+  width: 100% !important;
+  -webkit-transform: none !important;
+          transform: none !important;
+}
+
+.fp-slide {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all .7s ease-in-out;
+  transition: all .7s ease-in-out;
+}
+
+.fp-slide.active {
+  visibility: visible;
+  opacity: 1;
+}
+
 .container {
   width: 100%;
 }
