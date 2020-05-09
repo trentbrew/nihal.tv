@@ -147,8 +147,8 @@ video {
 }
 
 .blur {
-  -webkit-filter: blur(6px) brightness(0.4);
-          filter: blur(6px) brightness(0.4);
+  -webkit-filter: brightness(0.4);
+          filter: brightness(0.4);
   z-index: -1;
 }
 
@@ -304,7 +304,7 @@ video {
 }
 
 .info:hover {
-  opacity: 0.3;
+  opacity: 0.8;
   background: none;
   color: white;
 }
@@ -837,7 +837,8 @@ strong {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: #101010;
+  background: -webkit-gradient(linear, left top, left bottom, from(#101010), to(black));
+  background: linear-gradient(#101010, black);
   position: absolute;
   width: 100%;
   height: 100vh;
@@ -1435,6 +1436,15 @@ a {
     top: 0px;
     right: 0px;
     margin: 24px;
+  }
+  .slideshow {
+    -webkit-transition: 500ms;
+    transition: 500ms;
+  }
+  .slideshow .background-screengrab {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 /*# sourceMappingURL=styles.css.map */
