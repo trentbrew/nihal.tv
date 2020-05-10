@@ -20,8 +20,8 @@ body h1 {
 
 .fp-section {
   opacity: 0;
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
+  -webkit-transform: scale(0.96);
+          transform: scale(0.96);
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
@@ -34,16 +34,17 @@ body h1 {
 }
 
 .fp-slidesContainer {
-  width: 100% !important;
   -webkit-transform: none !important;
           transform: none !important;
 }
 
 .fp-slide {
+  width: 100% !important;
+  position: fixed;
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: all .7s ease-in-out;
-  transition: all .7s ease-in-out;
+  -webkit-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
 }
 
 .fp-slide.active {
