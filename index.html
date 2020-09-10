@@ -105,7 +105,7 @@
                         </div>
                         <div class="more-info" v-bind:class="[infoActive ? 'more-info-active' : 'more-info-inactive' ]">
                             <ul style="display: inline-flex; list-style: none; padding: 0px" class="images" :id="'images' + index">
-                                <li v-for="(p, index) in i.screenGrabs">
+                                <li v-for="(p, index) in i.screenGrabs" >
                                     <img style="width: 260px" :src="p" :id="'shot' + index" />
                                 </li>
                             </ul>
@@ -138,7 +138,7 @@
                                 <form class="contact-form" @submit.prevent="sendEmail">
                                     <a href="mailto:nihal@nihal.tv" target="_blank"><h4 style="display: inline-flex; line-height: 40px"><div class="contact-icon icon-email"></div>nihal@nihal.tv</h4></a>
                                     <a href="tel:6303605706"><h4 style="display: inline-flex; line-height: 40px"><div class="contact-icon icon-phone"></div>630.360.5706</h4></a>
-                                    <h4 class="disabled" style="display: inline-flex; line-height: 40px"><div class="contact-icon icon-cv"></div><a href="#">CV available upon request</a></h4>
+                                    <h4 class="disabled" style="display: inline-flex; line-height: 40px"><div class ="contact-icon icon-cv"></div><a href="#">CV available upon request</a></h4>
                                 </form>  
                             </div>
                         </div>

@@ -72,6 +72,9 @@ new Vue({
                 ],
                 screenGrabs: [
                     ""
+                ],
+                screenGrabThumbs: [
+                    ""
                 ]
             }
         }
