@@ -647,8 +647,8 @@ video {
   margin: 0px !important;
   height: 100vh;
   padding: 0px !important;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 1s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: 1s cubic-bezier(0.65, 0, 0.35, 1);
   margin: 0px;
   pointer-events: none;
 }
@@ -663,8 +663,8 @@ video {
   margin: 0px !important;
   height: 0vh;
   padding: 0px !important;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 1s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: 1s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .veil-container {
@@ -761,8 +761,8 @@ video {
   animation-fill-mode: both;
   -webkit-animation: load7 1.7s infinite ease-in-out;
   animation: load7 1.7s infinite ease-in-out;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 4;
+          animation-iteration-count: 4;
 }
 
 .loader {
@@ -1235,6 +1235,27 @@ a {
 
 .photo-foot {
   padding: 6px 0px 6px 0px !important;
+  -webkit-animation: fadein 1s ease forwards 2s;
+          animation: fadein 1s ease forwards 2s;
+  opacity: 0 !important;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media only screen and (max-width: 900px) {
@@ -1354,6 +1375,7 @@ a {
   }
   .images li {
     width: 0px;
+    cursor: pointer;
   }
   .images img {
     padding-right: 12px !important;
@@ -1470,6 +1492,7 @@ a {
     top: 0px;
     right: 0px;
     margin: 24px;
+    line-height: 34px;
   }
   .slideshow {
     -webkit-transition: 500ms;

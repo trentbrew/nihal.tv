@@ -16,31 +16,31 @@
         <div class="container" id="app">
                 <div class="navbar nav-photo" v-bind:class="[ watch ? 'invisible' : 'visible' ]">
                     
-                        <div class="nav-inner">
-                            <ul style="list-style: none !important" class="nav-left">
-                                <a href="index.html"><li>Work</li></a>
-                                <li class="active">Photo</li>
-                                <a href="index.html#contact"><li>Contact</li></a>
-                            </ul>
-            
-                            <ul style="list-style: none !important" class="nav-right">
-                                <li><a href="https://www.imdb.com/name/nm7577022/?ref_=nv_sr_srsg_0" target="_blank"><div class="social-link imdb"></div></a></li>
-                                <li><a href="https://vimeo.com/nihaldantluri" target="_blank"><div class="social-link vimeo"></div></a></li>
-                                <li><a href="https://www.instagram.com/nihal_dantluri/" target="_blank"><div class="social-link instagram"></div></a></li>
-                            </ul>
-                        </div>
+                    <div class="nav-inner">
+                        <ul style="list-style: none !important" class="nav-left">
+                            <a href="index.html"><li>Work</li></a>
+                            <li class="active">Photo</li>
+                            <a href="index.html#contact"><li>Contact</li></a>
+                        </ul>
+        
+                        <ul style="list-style: none !important" class="nav-right">
+                            <li><a href="https://www.imdb.com/name/nm7577022/?ref_=nv_sr_srsg_0" target="_blank"><div class="social-link imdb"></div></a></li>
+                            <li><a href="https://vimeo.com/nihaldantluri" target="_blank"><div class="social-link vimeo"></div></a></li>
+                            <li><a href="https://www.instagram.com/nihal_dantluri/" target="_blank"><div class="social-link instagram"></div></a></li>
+                        </ul>
                     </div>
+                </div>
 
-                    <div class="photo-veil" v-bind:class="[ viewOpen ? 'photo-veil-active' : 'photo-veil-inactive' ]">
-                        <img @click="toggleView" class="image-big" :src="viewing"></img>
-                    </div>
-            
-                    <div class="grid-container">
-                            <img class="photo" @click="toggleView" v-for="(p, index) in photos" :src="p.thumbSrc350" :alt="p.src"></img>
-                        </div>
+                <div class="photo-veil" v-bind:class="[ viewOpen ? 'photo-veil-active' : 'photo-veil-inactive' ]">
+                    <img @click="toggleView" class="image-big" :src="viewing"></img>
+                </div>
+        
+                <div class="grid-container">
+                    <img class="photo" @click="toggleView" v-for="(p, index) in photos" :src="p.thumbSrc350" :alt="p.src"></img>
+                </div>
 
 
-                        <div class="foot photo-foot" style="position:relative; background:#212225"><p>Coded with <span class="love">♡</span> by <a href="https://tbrew1023.github.io/ux-portfolio" target="_blank">Trent Brew</a></p></div>
+                <div class="foot photo-foot" style="position:relative; background:#212225"><p>Coded with <span class="love">♡</span> by <a href="https://tbrew1023.github.io/ux-portfolio" target="_blank">Trent Brew</a></p></div>
         </div>
 
         <!-- Vue -->   

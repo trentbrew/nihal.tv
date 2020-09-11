@@ -55,9 +55,10 @@ new Vue({
                 navigationPosition: 'right',
                 parallax: true,
                 lazyLoading: false,
-                scrollingSpeed: 750,
+                scrollingSpeed: 1200,
                 anchors:[],
                 controlArrows: false,
+                easingcss3: 'cubic-bezier(0.65, 0, 0.35, 1)', //swoopy
             },
             item: {
                 title: "",
@@ -91,7 +92,7 @@ new Vue({
            // console.log("item count: " + parentObj.items.length);
             parentObj.componentsReady();
             parentObj.removeLoader();
-        }, 1000)
+        }, 4000)
     },
     methods: {
         componentsReady() {

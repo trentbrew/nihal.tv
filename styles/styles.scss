@@ -644,9 +644,8 @@ video {
     margin: 0px !important;
     height: 100vh;
     padding: 0px !important;
-    transition: 1s;
+    transition: 1s cubic-bezier(0.65, 0, 0.35, 1);
     margin: 0px;
-
     pointer-events: none;
 }
 
@@ -661,7 +660,8 @@ video {
     margin: 0px !important;
     height: 0vh;
     padding: 0px !important;
-    transition: 1s;
+    transition: 1s cubic-bezier(0.65, 0, 0.35, 1);
+
     //opacity: 0;
     //pointer-events: none;
 
@@ -744,7 +744,7 @@ video {
   animation-fill-mode: both;
   -webkit-animation: load7 1.7s infinite ease-in-out;
   animation: load7 1.7s infinite ease-in-out;
-  animation-iteration-count: 1;
+  animation-iteration-count: 4;
 }
 .loader {
   color: #ffffff;
@@ -1179,6 +1179,17 @@ a {
 
 .photo-foot {
     padding: 6px 0px 6px 0px !important;
+    animation: fadein 1s ease forwards 2s;
+    opacity: 0 !important;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 //---------- mobile ----------
@@ -1323,6 +1334,7 @@ a {
 
         li {
             width: 0px;
+            cursor: pointer;
         }
 
         img {
