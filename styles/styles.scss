@@ -740,11 +740,8 @@ video {
   border-radius: 50%;
   width: 2.5em;
   height: 2.5em;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation: load7 1.7s infinite ease-in-out;
-  animation: load7 1.7s infinite ease-in-out;
-  animation-iteration-count: 4;
+  animation: load7 1s infinite ease-in-out;
+  animation-iteration-count: 3;
 }
 .loader {
   color: #ffffff;
