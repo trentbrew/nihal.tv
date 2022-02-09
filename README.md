@@ -2,5 +2,5 @@
 Film portfolio website
 
 ### Installation
-`npm install`
-`npm run serve`
+- `npm install`
+- `npm run serve`
